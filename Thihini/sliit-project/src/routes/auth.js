@@ -10,7 +10,7 @@ router.post("/auth", async (req, res) => {
         if (error)
             return res.status(400).send({ message: error.details[0].message });
 
-            //methana user awilla DB eken enne  oya ewapu email eka thiyenam
+    
 
         const user = await User.findOne({ email: req.body.email });
         if (!user) {
@@ -21,13 +21,13 @@ router.post("/auth", async (req, res) => {
         const validPassword = await bcrypt.compare(
             req.body.password, user.password
         );
-//methanadi balanawa  a inna userge password eka harida kiyala 
+ 
         if (!validPassword) {
 
             return res.status(401).send({ message: "Invalid Email or Password" });
         }
 
-        // a okkama harinam methana valid user kenek innawa
+    
         const token = user.genarateUserAuthToken();
 
         let userDetails = {

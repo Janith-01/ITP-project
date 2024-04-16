@@ -55,7 +55,7 @@ router.route("/").get((req, res) => {
 
         });
     } else {
-        //meka call wenen keyword eka null nathnm oya methana wenas karanna oen 
+       
         
         console.log(keyword);
         User.find({ name: keyword }).then((user) => {
