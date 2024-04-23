@@ -1,18 +1,14 @@
 // Import necessary modules
 import express from 'express';
-import cors from 'cors';
-import { createReqOrder, getAllReqOrders, deleteReqOrder, updateReqOrder } from '../controllers/reqOrderController';
+import { Router } from "express";
+import { createReqOrder, getAllReqOrders, deleteReqOrder, updateReqOrder } 
+                from "../controllers/reqOrde.js";
 
 // Create router instance
 const router = express.Router();
 
 // Apply CORS middleware
-router.use(
-    cors({
-        origin: 'http://localhost:8083',
-        credentials: true
-    })
-);
+
 
 // Define routes
 router.post('/reqOrder', createReqOrder);

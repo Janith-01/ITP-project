@@ -7,8 +7,6 @@ import userRouter from "./router/userRoutes.js";
 import feedbackRouter from "./router/feedbackRoutes.js";
 import reqOrderRoutes from "./router/reqOrderRoutes.js";
 
-
-
 // Environment variables
 dotenv.config();
 
@@ -26,7 +24,18 @@ app.use(morgan("tiny"));
 // Routes
 app.use("/api/user", userRouter); // User routes
 app.use("/api/job", feedbackRouter); // Feedback routes
-app.use("/api/order", reqOrderRoutes); // Request order routes
+app.use("/", reqOrderRoutes); // Request order routes
+
+
+
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 
 // Default route
 app.get("/", (req, res) => {

@@ -10,11 +10,18 @@ import Profile from "./components/dashboard/profile";
 import Customerhome from "./components/customer/customerhome";
 import SupplyManager from "./components/dashboard/user/supplymanager";
 
+import axios from 'axios';
+import {Toaster} from 'react-hot-toast';
+
+axios.defaults.baseURL = 'http://localhost:8083';
+axios.defaults.withCredentials = true;
+
 function App() {
   return (
     <main>
       <UserProvider>
         <Router>
+        <Toaster position='top-center' toastOptions={{duration: 2000}}/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/customersignin" element={<Customersignup />} />

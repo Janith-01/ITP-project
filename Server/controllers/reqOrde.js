@@ -1,5 +1,5 @@
 // Import mongoose and the model
-import ReqOrder from './path/to/ReqOrderModel';
+import ReqOrder from '../model/reqOrderModel.js';
 
 // Create reqOrder controller
 export const createReqOrder = async (req, res) => {
