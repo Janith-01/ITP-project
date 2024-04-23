@@ -11,6 +11,7 @@ import Customerhome from "./components/customer/customerhome";
 import SupplyManager from "./components/dashboard/user/supplymanager";
 import AllSupp from "./components/dashboard/user/allSupp";
 import AddSupp from "./components/dashboard/user/addsupp";
+import SendMail from "./components/dashboard/user/SendMailPage.jsx";
 
 import axios from 'axios';
 import {Toaster} from 'react-hot-toast';
@@ -32,6 +33,7 @@ function App() {
             <Route path="/dashboard/supplymanager" element={<SupplyManager />} />
             <Route path="/dashboard/allsupp" element={<AllSupp />} />
             <Route path="/dashboard/allsupp/addsupp" element={<AddSupp />} />
+            <Route path="/dashboard/allsupp/sendmail" element={<SendMail />} />
             <Route path="/dashboard/profile" element={<Profile />} />
             <Route path="/customer/home" element={<Customerhome />} />
             <Route path="*" element={<PageNotFound />} />

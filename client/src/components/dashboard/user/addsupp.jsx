@@ -22,10 +22,11 @@ const AddSupplierForm = () => {
       });
       // Redirect to supplier page after adding supplier
       toast.success('Supplier Added Succsesfully');
-      navigate("/suppliers");
+      navigate("/dashboard/allsupp");
 
     } catch (error) {
       console.error("Error adding supplier:", error);
+      toast.error('Error adding supplier');
     }
   };
 

@@ -3,11 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar.js";
 import { toast } from 'react-hot-toast';
+import SendMailPage from "./SendMailPage.jsx";
 
 const SupplierPage = () => {
   const [suppliers, setSuppliers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const [showSendMail, setShowSendMail] = useState(false); 
+  const [recipientEmail, setRecipientEmail] = useState("");
 
   useEffect(() => {
     fetchSuppliers();
@@ -20,6 +23,13 @@ const SupplierPage = () => {
     } catch (error) {
       console.error("Error fetching suppliers:", error);
     }
+  };
+
+  
+  const handleSendMail = (email) => {
+    setShowSendMail(true); // Show the SendMailPage component
+    setRecipientEmail(email); // Set the recipient email address
+    navigate("/dashboard/allsupp/sendmail"); // Navigate to the SendMailPage
   };
 
   const handleRemoveSupplier = async (id) => {
@@ -36,9 +46,7 @@ const SupplierPage = () => {
     }
   };
 
-  const handleSendMail = (email) => {
-    // Logic to send email
-  };
+  
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -83,7 +91,7 @@ const SupplierPage = () => {
                       <td>{supplier.emailAddress}</td>
                       <td>{supplier.supplyingGoods}</td>
                       <td>
-                        <button onClick={() => handleSendMail(supplier.emailAddress)}>
+                        <button onClick={() => handleSendMail(supplier.emailAddress) }>
                           Send Mail
                         </button>
                         <button onClick={() => handleRemoveSupplier(supplier._id)}>
@@ -99,6 +107,8 @@ const SupplierPage = () => {
           </div>
         </div>
       </div>
+      
+      {showSendMail && < SendMailPage recipientEmail={recipientEmail} />}
     </div>
   );
 };
