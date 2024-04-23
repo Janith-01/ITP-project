@@ -1,98 +1,44 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../component.css";
-import { useNavigate } from "react-router-dom";
-import { useUser } from "../../provider/userprovider.js";
 import Sidebar from "../sidebar/sidebar.js";
-import LoadingSpinner from "../../common/LoadingSpinner.js";
-import ErrorMessage from "../../common/ErrorMessage.js";
+import { toast } from 'react-hot-toast';
 
-function SupplyManager() {
-  const { logUser } = useUser();
-  const [reqOrderList, setReqOrderList] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+
+const ReqOrderPage = () => {
+  const [reqOrders, setReqOrders] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const fetchReqOrderList = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get('/reqOrders');
-        if (response.status === 200) {
-          setReqOrderList(response.data.data || []);
-          setError("");
-        } else {
-          setError("Failed to fetch data");
-        }
-      } catch (error) {
-        setError(error.message);
-      }
-      setLoading(false);
-    };
-
-    fetchReqOrderList();
+    fetchReqOrders();
   }, []);
 
-  const handleApprove = async (reqOrderId) => {
+  const fetchReqOrders = async () => {
     try {
-      const response = await axios.put(
-        `${process.env.REACT_APP_BASE_URL}/reqOrder/${reqOrderId}`,
-        { status: "approved" }
-      );
-      if (response.status === 200) {
-        setReqOrderList((prevOrders) =>
-          prevOrders.map((order) =>
-            order._id === reqOrderId ? { ...order, Status: "approved" } : order
-          )
-        );
-      } else {
-        throw new Error("Failed to approve request");
-      }
+      const response = await axios.get('http://localhost:8083/reqOrders');
+      setReqOrders(response.data);
     } catch (error) {
-      setError(error.message);
+      console.error('Error fetching reqOrders:', error);
     }
   };
 
-  const handlePending = async (reqOrderId) => {
+  const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await axios.put(
-        `${process.env.REACT_APP_BASE_URL}/reqOrder/${reqOrderId}`,
-        { status: "pending" }
-      );
-      if (response.status === 200) {
-        setReqOrderList((prevOrders) =>
-          prevOrders.map((order) =>
-            order._id === reqOrderId ? { ...order, Status: "pending" } : order
-          )
-        );
-      } else {
-        throw new Error("Failed to update status");
-      }
+      await axios.put(`http://localhost:8083/reqOrder/${id}`, { Status: newStatus });
+      toast.success('change Status');
+
+      // Refresh page after status change
+      fetchReqOrders();
     } catch (error) {
-      setError(error.message);
+      console.error('Error updating status:', error);
     }
   };
 
-  const handleDisapprove = async (reqOrderId) => {
-    try {
-      const response = await axios.put(
-        `${process.env.REACT_APP_BASE_URL}/reqOrder/${reqOrderId}`,
-        { status: "disapproved" }
-      );
-      if (response.status === 200) {
-        setReqOrderList((prevOrders) =>
-          prevOrders.map((order) =>
-            order._id === reqOrderId ? { ...order, Status: "disapproved" } : order
-          )
-        );
-      } else {
-        throw new Error("Failed to disapprove request");
-      }
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  const filteredReqOrders = reqOrders.filter(reqOrder =>
+    reqOrder.Request_ID.includes(searchTerm) ||
+    reqOrder.Product_ID.includes(searchTerm) ||
+    reqOrder.Product_Name.includes(searchTerm)
+  );
 
   return (
     <div>
@@ -101,10 +47,15 @@ function SupplyManager() {
       <div className="content flex justify-center items-center">
         <div className="w-full">
           <div className="w-80 flex items-center justify-center">
-            {loading && <LoadingSpinner />}
-            {error && <ErrorMessage message={error} />}
-            {!loading && !error && reqOrderList.length > 0 && (
-              <table>
+            <div className="container">
+              <h1>ReqOrders</h1>
+              <input
+                type="text"
+                placeholder="Search by Request ID, Product ID, or Product Name"
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+              />
+              <table className="table table-striped">
                 <thead>
                   <tr>
                     <th>Request ID</th>
@@ -113,11 +64,11 @@ function SupplyManager() {
                     <th>Quantity</th>
                     <th>Requested Date</th>
                     <th>Status</th>
-                    <th>Actions</th>
+                    <th>Change Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {reqOrderList.map((reqOrder) => (
+                  {filteredReqOrders.map(reqOrder => (
                     <tr key={reqOrder._id}>
                       <td>{reqOrder.Request_ID}</td>
                       <td>{reqOrder.Product_ID}</td>
@@ -126,20 +77,20 @@ function SupplyManager() {
                       <td>{reqOrder.Requested_Date}</td>
                       <td>{reqOrder.Status}</td>
                       <td>
-                        <button onClick={() => handleApprove(reqOrder._id)}>Approve</button>
-                        <button onClick={() => handlePending(reqOrder._id)}>Pending</button>
-                        <button onClick={() => handleDisapprove(reqOrder._id)}>Disapprove</button>
+                        <button className="btn btn-success" onClick={() => handleStatusChange(reqOrder._id, 'Approve')}>Approve</button>
+                        <button className="btn btn-danger" onClick={() => handleStatusChange(reqOrder._id, 'Disapprove')}>Disapprove</button>
+                        <button className="btn btn-warning" onClick={() => handleStatusChange(reqOrder._id, 'Pending')}>Pending</button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            )}
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default SupplyManager;
+export default ReqOrderPage;

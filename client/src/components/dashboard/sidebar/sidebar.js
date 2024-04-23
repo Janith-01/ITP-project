@@ -45,10 +45,17 @@ function Sidebar({ selectedIndex }) {
         Profile
       </div>
       <div
-        className={`sidebar-item ${selectedIndex == 5 && "active"}`}
+        className={`sidebar-item ${selectedIndex == 6 && "active"}`}
         onClick={() => navigateTo("/dashboard/supplymanager")}
       >
         Supply Management
+      </div>
+
+      <div
+        className={`sidebar-item ${selectedIndex == 7 && "active"}`}
+        onClick={() => navigateTo("/dashboard/allsupp")}
+      >
+        View Suplliers
       </div>
     </div>
   );

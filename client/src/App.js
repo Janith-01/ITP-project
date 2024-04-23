@@ -9,6 +9,8 @@ import { UserProvider } from "./components/provider/userprovider";
 import Profile from "./components/dashboard/profile";
 import Customerhome from "./components/customer/customerhome";
 import SupplyManager from "./components/dashboard/user/supplymanager";
+import AllSupp from "./components/dashboard/user/allSupp";
+import AddSupp from "./components/dashboard/user/addsupp";
 
 import axios from 'axios';
 import {Toaster} from 'react-hot-toast';
@@ -28,6 +30,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboardhome />} />
             <Route path="/dashboard/users" element={<Viewallusers />} />
             <Route path="/dashboard/supplymanager" element={<SupplyManager />} />
+            <Route path="/dashboard/allsupp" element={<AllSupp />} />
+            <Route path="/dashboard/allsupp/addsupp" element={<AddSupp />} />
             <Route path="/dashboard/profile" element={<Profile />} />
             <Route path="/customer/home" element={<Customerhome />} />
             <Route path="*" element={<PageNotFound />} />

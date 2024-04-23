@@ -1,7 +1,5 @@
-// Import mongoose and the model
 import ReqOrder from '../model/reqOrderModel.js';
 
-// Create reqOrder controller
 export const createReqOrder = async (req, res) => {
     try {
         const data = await ReqOrder.create(req.body);
@@ -11,7 +9,6 @@ export const createReqOrder = async (req, res) => {
     }
 }
 
-// Get all reqOrders controller
 export const getAllReqOrders = async (req, res) => {
     try {
         const data = await ReqOrder.find();
@@ -21,7 +18,6 @@ export const getAllReqOrders = async (req, res) => {
     }
 }
 
-// Delete reqOrder controller
 export const deleteReqOrder = async (req, res) => {
     try {
         const { id } = req.params;
@@ -32,7 +28,6 @@ export const deleteReqOrder = async (req, res) => {
     }
 }
 
-// Update reqOrder controller
 export const updateReqOrder = async (req, res) => {
     try {
         const { id } = req.params;
