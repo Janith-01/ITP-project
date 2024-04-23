@@ -12,7 +12,7 @@ const router = express.Router();
 router.post('/create', createInsident);
 router.get('/:id', getInsidentById);
 router.get('/', getAllInsidents);
-router.put('/update:id', updateInsident);
-router.delete('/delete:id', deleteInsident);
+router.put('/update/:id', updateInsident);
+router.delete('/delete/:id', deleteInsident);
 
 export default router;

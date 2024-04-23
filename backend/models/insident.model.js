@@ -1,36 +1,35 @@
 import mongoose from "mongoose";
 
 const insidentSchema = new mongoose.Schema({
-    vehicleNumber: {
+    ownerName: {
         type: String,
-        required: true,
-        unique: true
-    },
-    vehicleType: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    location: {
-        type: String,
-        required: true,
-        unique: true
+        required: true
     },
     nic: {
         type: String,
         required: true,
-        unique: true
     },
-    userName: {
+    phone: {
         type: String,
-        required: true
+        required: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true
     },
-    insidentType: {
+    vehicleNumber: {
+        type: String,
+        required: true,
+    },
+    vehicleType: {
+        type: String,
+        required: true,
+    },
+    location: {
+        type: String,
+        required: true,
+    },
+    emergencyType: {
         type: String,
         required: true
     },
@@ -38,8 +37,9 @@ const insidentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    insurencePolicy: { 
+    status: { 
         type: String,
+        required: true
     },
     estimatedCost: {
         type: Number,

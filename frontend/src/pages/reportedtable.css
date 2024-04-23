@@ -1,0 +1,94 @@
+.card {
+  margin: auto;
+  border: transparent;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart {
+  background-color: #fcfcfc;
+  padding: 2vh;
+  width: 100%;
+}
+
+.h1 {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to left, #0972fb, #e68af2, #9a08ca);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+}
+
+#reportedtable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#reportedtable td,
+#reportedtable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#reportedtable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#reportedtable tr:hover {
+  background-color: #ddd;
+}
+
+#reportedtable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #616161;
+  color: white;
+}
+
+.btn1 {
+  border: 2px black solid;
+  padding: 6px;
+  color: #000;
+  max-width: 20%;
+  margin-left: 80%;
+}
+
+.btn1:hover {
+  background-color: rgb(4, 4, 4);
+}
+
+.btn1:hover {
+  color: white;
+}
+
+/* Custom styles for the modal */
+.modal-class {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; /* Adjust as needed */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.modal-overlay-class {
+  position: fixed;
+  top: 12%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}
+/* Scrollable modal class */
+.scrollable-modal-content {
+  max-height: 80vh; /* Maximum height to limit the modal content height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
