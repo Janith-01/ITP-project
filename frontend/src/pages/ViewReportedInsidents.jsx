@@ -2,21 +2,19 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
 import CreateInsidentForm from '../components/CreateInsidentForm';
-import Modal from 'react-modal'; // Importing React Modal
+import Modal from 'react-modal'; 
 import './reportedtable.css';
 
 const PAGE_SIZE = 20; // Define page size for pagination
 
-// Set the root element for the modal (usually the element with id="root")
 Modal.setAppElement('#root');
 
 function ViewReportedInsidents() {
     const [incidents, setIncidents] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [showForm, setShowForm] = useState(false); // State variable to manage form visibility
-    const [currentIncident, setCurrentIncident] = useState(null); // State variable to hold data for the specific row clicked
-
-    // Fetch reported incidents data from the backend
+    const [showForm, setShowForm] = useState(false); 
+    const [currentIncident, setCurrentIncident] = useState(null); 
+   
     useEffect(() => {
         const fetchIncidents = async () => {
             try {
@@ -123,7 +121,7 @@ function ViewReportedInsidents() {
                 </div>
             </div>
 
-            {/* Render the CreateInsidentForm as a modal if showForm is true */}
+          
             <Modal
                 isOpen={showForm}
                 onRequestClose={() => setShowForm(false)}
@@ -131,7 +129,7 @@ function ViewReportedInsidents() {
                 className="modal-class"
                 overlayClassName="modal-overlay-class"
             >
-                {/* Apply the scrollable-modal-content class to make the modal scrollable */}
+              
                 <div className="scrollable-modal-content">
                     <CreateInsidentForm
                         incident={currentIncident}

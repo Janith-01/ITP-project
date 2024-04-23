@@ -72,7 +72,7 @@ export const deleteInsident = async (req,res) => {
         const insidentId = req.params.id;
         const insident = await Insident.findById(insidentId);
         if(!insident){
-            return res.status(404).json({message: 'Insident not found0'});
+            return res.status(404).json({message: 'Insident not found'});
         }
         await Insident.findByIdAndDelete(insidentId);
         res.status(200).json({message: 'Insident Deleted Successfully'})

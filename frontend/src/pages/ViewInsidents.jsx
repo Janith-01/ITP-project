@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 import './reportedtable.css';
 
-const PAGE_SIZE = 20; // Define page size for pagination
+const PAGE_SIZE = 20; 
 
 // Define styles for PDF document
 const styles = StyleSheet.create({
@@ -130,11 +130,11 @@ function ViewInsidents() {
             formatDate(insident.createdAt).includes(searchQuery)
     );
 
-    // Calculate total pages for pagination
+   
     const totalPages = Math.ceil(filteredInsidents.length / PAGE_SIZE);
     const paginatedInsidents = filteredInsidents.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-    // Pagination functions
+
     const nextPage = () => {
         if (currentPage < totalPages) {
             setCurrentPage(currentPage + 1);
