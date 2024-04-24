@@ -54,16 +54,25 @@ function Customersignup() {
 
     // Validate address
     if (!data.address) {
+      toast.error('Address is required', {
+        position: "bottom-right",
+      });
       errors.address = 'Address is required';
     }
 
     // Validate password
     if (!isValidPassword(data.password)) {
+      toast.error('Password must be at least 8 characters long', {
+        position: "bottom-right",
+      });
       errors.password = 'Password must be at least 8 characters long';
     }
 
     // Validate re-entered password
     if (data.password !== data.rePassword) {
+      toast.error('Passwords do not match', {
+        position: "bottom-right",
+      });
       errors.rePassword = 'Passwords do not match';
     }
 
