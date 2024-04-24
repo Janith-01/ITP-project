@@ -432,9 +432,15 @@ function Viewallusers() {
                         setuserType(target.value);
                       }}
                     >
-                      <option value="ADMIN">Admin</option>
-                      <option value="CASHIER">Cashier</option>
-                      <option value="MANAGER">Manager</option>
+                     <option value="Senior Manager">Senior Manager</option>
+                      <option value="Employee Manager">Employee Manager</option>
+                      <option value="Vehicle Manager">Vehicle Manager</option>
+                      <option value="Financial Manger">Financial Manger</option>
+                      <option value="Emergency Manger">Emergency Manger</option>
+                      <option value="Supllier Manger">Supllier Manger</option>
+                      <option value="Inventory Manger">Inventory Manger</option>
+                      <option value="Customer Affairs Manger">Customer Affairs Manger</option>
+                      <option value="Customer">Customer </option>
                     </select>
                   </div>
                 </div>
@@ -544,10 +550,17 @@ function Viewallusers() {
                         setuserType(target.value);
                       }}
                     >
-                      <option value="ADMIN">Admin</option>
-                      <option value="CASHIER">Cashier</option>
-                      <option value="MANAGER">Manager</option>
-                      <option value="TEST">TEST</option>
+                      <option value="Senior Manager">Senior Manager</option>
+                      <option value="Employee Manager">Employee Manager</option>
+                      <option value="Vehicle Manager">Vehicle Manager</option>
+                      <option value="Financial Manger">Financial Manger</option>
+                      <option value="Emergency Manger">Emergency Manger</option>
+                      <option value="Supllier Manger">Supllier Manger</option>
+                      <option value="Inventory Manger">Inventory Manger</option>
+                      <option value="Customer Affairs Manger">Customer Affairs Manger</option>
+                      <option value="Customer">Customer </option>
+
+
                     </select>
                   </div>
                 </div>
