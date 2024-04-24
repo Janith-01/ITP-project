@@ -138,15 +138,15 @@ function Home() {
               />
             </div>
           </div>
-          <div>
+          {/* <div>
             <a href="/">
               <p className="text-end forgot-password-text font-medium">
                 Forgot your password ?
               </p>
             </a>
-          </div>
+          </div> */}
           <button
-            className="btn-primary"
+            className="btn-primary mt-10"
             onClick={() => {
               signInCustomer();
             }}
