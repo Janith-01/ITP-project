@@ -27,16 +27,28 @@ function Customersignup() {
 
     // Validate firstName
     if (!data.firstName) {
+      toast.error('Please enter first name', {
+        position: "bottom-right",
+      });
+
       errors.firstName = 'First name is required';
     }
 
     // Validate lastName
     if (!data.lastName) {
+      toast.error('Please enter last name', {
+        position: "bottom-right",
+      });
+
       errors.lastName = 'Last name is required';
     }
 
     // Validate phone number
     if (!isValidPhoneNumber(data.phone)) {
+      toast.error('Invalid phone number', {
+        position: "bottom-right",
+      });
+
       errors.phone = 'Invalid phone number';
     }
 

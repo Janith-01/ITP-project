@@ -38,6 +38,8 @@ export const UserSchema = new mongoose.Schema({
       changes: { type: Object }, // Store the changes made by the admin
     },
   ],
+
+  timestamp: { type: Date, default: Date.now },
 });
 
 export default mongoose.model.Users || mongoose.model("User", UserSchema);

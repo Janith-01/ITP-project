@@ -547,6 +547,7 @@ function Viewallusers() {
                       <option value="ADMIN">Admin</option>
                       <option value="CASHIER">Cashier</option>
                       <option value="MANAGER">Manager</option>
+                      <option value="TEST">TEST</option>
                     </select>
                   </div>
                 </div>

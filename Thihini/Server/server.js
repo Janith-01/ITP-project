@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import router from "./router/route.js";
 import userRouter from "./router/userRoutes.js";
 import feedbackRouter from "./router/feedbackRoutes.js";
+import reportRouter from "./router/reportRoutes.js";
 
 // environment variables
 dotenv.config();
@@ -34,6 +35,9 @@ app.use("/api/user", userRouter);
 
 // Feedback routes
 app.use("/api/job", feedbackRouter);
+
+// Report routes
+app.use("/api/report", reportRouter);
 
 // Start Server
 

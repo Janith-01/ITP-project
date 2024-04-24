@@ -44,6 +44,12 @@ function Sidebar({ selectedIndex }) {
       >
         Profile
       </div>
+      <div
+        className={`sidebar-item ${selectedIndex == 7 && "active"}`}
+        onClick={() => navigateTo("/dashboard/users/report")}
+      >
+        Report
+      </div>
     </div>
   );
 }
