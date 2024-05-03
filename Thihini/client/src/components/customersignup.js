@@ -210,7 +210,7 @@ function Customersignup() {
                 </label>
                 <div className="input-wrapper formfield">
                   <input
-                    type="text"
+                    type="tel"
                     className="w-full  font-medium text-start"
                     value={phone}
                     onChange={({ target }) => {

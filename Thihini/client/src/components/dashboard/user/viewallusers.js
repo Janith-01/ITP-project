@@ -3,6 +3,8 @@ import "../../component.css";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../provider/userprovider.js";
 import Sidebar from "../sidebar/sidebar.js";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Viewallusers() {
   const { logUser, loginUser } = useUser();
@@ -36,6 +38,90 @@ function Viewallusers() {
   // const [address, setaddress] = useState("");
   // const [userType, setuserType] = useState("ADMIN");
 
+  function validate(data) {
+    const errors = {};
+
+    // Validate email
+    if (!isValidEmail(data.email)) {
+      toast.error('Invalid email address', {
+        position: "bottom-right",
+      });
+      errors.email = 'Invalid email address';
+    }
+
+    // Validate firstName
+    if (!data.firstName) {
+      toast.error('Please enter first name', {
+        position: "bottom-right",
+      });
+
+      errors.firstName = 'First name is required';
+    }
+
+    // Validate lastName
+    if (!data.lastName) {
+      toast.error('Please enter last name', {
+        position: "bottom-right",
+      });
+
+      errors.lastName = 'Last name is required';
+    }
+
+    // Validate phone number
+    if (!isValidPhoneNumber(data.phone)) {
+      toast.error('Invalid phone number', {
+        position: "bottom-right",
+      });
+
+      errors.phone = 'Invalid phone number';
+    }
+
+    // Validate address
+    if (!data.address) {
+      toast.error('Address is required', {
+        position: "bottom-right",
+      });
+      errors.address = 'Address is required';
+    }
+
+    // Validate password
+    if (!isValidPassword(data.password)) {
+      toast.error('Password must be at least 8 characters long', {
+        position: "bottom-right",
+      });
+      errors.password = 'Password must be at least 8 characters long';
+    }
+
+    // Validate re-entered password
+    if (data.password !== data.rePassword) {
+      toast.error('Passwords do not match', {
+        position: "bottom-right",
+      });
+      errors.rePassword = 'Passwords do not match';
+    }
+
+    return errors;
+  }
+
+  // Example validation functions (replace with your own implementations)
+  function isValidEmail(email) {
+    // Regular expression for basic email validation
+    const emailRegex = /\S+@\S+\.\S+/;
+    return emailRegex.test(email);
+  }
+
+  function isValidPhoneNumber(phone) {
+    // Regular expression for basic phone number validation
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  }
+
+  function isValidPassword(password) {
+    // Password must be at least 8 characters long
+    return password.length >= 8;
+  }
+
+
   function addNewUser() {
     const data = {
       email: email,
@@ -47,6 +133,14 @@ function Viewallusers() {
       password: password,
       rePassword: rePassword,
     };
+
+    const errors = validate(data);
+    if (Object.keys(errors).length === 0) {
+      console.log('Data is valid');
+    } else {
+      console.log('Validation errors:', errors);
+      return;
+    }
 
     const url = process.env.REACT_APP_BASE_URL + "/user/register";
 
@@ -97,6 +191,14 @@ function Viewallusers() {
       address: showModel.address,
       userType: userType,
     };
+
+    const errors = validate(data);
+    if (Object.keys(errors).length === 0) {
+      console.log('Data is valid');
+    } else {
+      console.log('Validation errors:', errors);
+      return;
+    }
 
     const url = process.env.REACT_APP_BASE_URL + "/user/updateuser";
 
@@ -432,7 +534,7 @@ function Viewallusers() {
                         setuserType(target.value);
                       }}
                     >
-                     <option value="Senior Manager">Senior Manager</option>
+                      <option value="Senior Manager">Senior Manager</option>
                       <option value="Employee Manager">Employee Manager</option>
                       <option value="Vehicle Manager">Vehicle Manager</option>
                       <option value="Financial Manger">Financial Manger</option>
@@ -637,6 +739,7 @@ function Viewallusers() {
           </div>
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 }
