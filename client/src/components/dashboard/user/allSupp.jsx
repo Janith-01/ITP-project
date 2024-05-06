@@ -29,7 +29,7 @@ const SupplierPage = () => {
   const handleSendMail = (email) => {
     setShowSendMail(true); // Show the SendMailPage component
     setRecipientEmail(email); // Set the recipient email address
-    navigate("/dashboard/allsupp/sendmail"); // Navigate to the SendMailPage
+    //navigate("/dashboard/allsupp/sendmail"); // Navigate to the SendMailPage
   };
 
   const handleRemoveSupplier = async (id) => {
