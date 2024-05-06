@@ -3,7 +3,8 @@ import axios from "axios";
 import "../../component.css";
 import Sidebar from "../sidebar/sidebar.js";
 import { toast } from 'react-hot-toast';
-
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 const ReqOrderPage = () => {
   const [reqOrders, setReqOrders] = useState([]);
@@ -12,6 +13,9 @@ const ReqOrderPage = () => {
   useEffect(() => {
     fetchReqOrders();
   }, []);
+
+  const currentDate = new Date();
+  const dateTimeString = currentDate.toLocaleString();
 
   const fetchReqOrders = async () => {
     try {
@@ -25,7 +29,7 @@ const ReqOrderPage = () => {
   const handleStatusChange = async (id, newStatus) => {
     try {
       await axios.put(`http://localhost:8083/reqOrder/${id}`, { Status: newStatus });
-      toast.success('change Status');
+      toast.success('Status changed successfully');
 
       // Refresh page after status change
       fetchReqOrders();
@@ -39,6 +43,27 @@ const ReqOrderPage = () => {
     reqOrder.Product_ID.includes(searchTerm) ||
     reqOrder.Product_Name.includes(searchTerm)
   );
+
+  const downloadSupplyReport = () => {
+    const doc = new jsPDF();
+    const tableRows = [];
+    reqOrders.forEach(reqOrder => {
+      tableRows.push([
+        reqOrder.Request_ID,
+        reqOrder.Product_ID,
+        reqOrder.Product_Name,
+        reqOrder.Quantity,
+        reqOrder.Requested_Date,
+        reqOrder.Status
+      ]);
+    });
+    doc.autoTable({
+      head: [['Request ID', 'Product ID', 'Product Name', 'Quantity', 'Requested Date', 'Status']],
+      body: tableRows,
+    });
+    doc.text(`Generated on: ${dateTimeString}`, 10, doc.internal.pageSize.height - 10);
+    doc.save('supply_report.pdf');
+  };
 
   return (
     <div>
@@ -85,6 +110,7 @@ const ReqOrderPage = () => {
                   ))}
                 </tbody>
               </table>
+              <button onClick={downloadSupplyReport}>Supply report</button>
             </div>
           </div>
         </div>

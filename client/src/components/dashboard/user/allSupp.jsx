@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar.js";
 import { toast } from 'react-hot-toast';
 import SendMailPage from "./SendMailPage.jsx";
+import jsPDF from 'jspdf';
+import 'jspdf-autotable'; // Import jspdf-autotable
 
 const SupplierPage = () => {
   const [suppliers, setSuppliers] = useState([]);
@@ -25,28 +27,22 @@ const SupplierPage = () => {
     }
   };
 
-  
   const handleSendMail = (email) => {
-    setShowSendMail(true); // Show the SendMailPage component
-    setRecipientEmail(email); // Set the recipient email address
-    //navigate("/dashboard/allsupp/sendmail"); // Navigate to the SendMailPage
+    setShowSendMail(true);
+    setRecipientEmail(email);
   };
 
   const handleRemoveSupplier = async (id) => {
     if (window.confirm("Are you sure you want to remove this supplier?")) {
       try {
         await axios.delete(`http://localhost:8083/supplier/${id}`);
-        toast.success('Supplier remove Succsesfully');
-        // Refresh page after removing supplier
+        toast.success('Supplier removed successfully');
         fetchSuppliers();
-
       } catch (error) {
         console.error("Error removing supplier:", error);
       }
     }
   };
-
-  
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -57,6 +53,19 @@ const SupplierPage = () => {
       supplier.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       supplier.supplyingGoods.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const downloadSupplierReport = () => {
+    const doc = new jsPDF();
+    const tableRows = [];
+    suppliers.forEach((supplier) => {
+      tableRows.push([supplier.name, supplier.contactNumber, supplier.emailAddress, supplier.supplyingGoods]);
+    });
+    doc.autoTable({
+      head: [['Name', 'Contact Number', 'Email Address', 'Supplying Goods']],
+      body: tableRows,
+    });
+    doc.save('supplier_report.pdf');
+  };
 
   return (
     <div>
@@ -103,12 +112,13 @@ const SupplierPage = () => {
                 </tbody>
               </table>
               <button onClick={() => navigate("/dashboard/allsupp/addsupp")}>Add Supplier</button>
+              <button onClick={downloadSupplierReport}>Supplier report</button>
             </div>
           </div>
         </div>
       </div>
       
-      {showSendMail && < SendMailPage recipientEmail={recipientEmail} />}
+      {showSendMail && <SendMailPage recipientEmail={recipientEmail} />}
     </div>
   );
 };
