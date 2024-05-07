@@ -162,10 +162,11 @@ function Viewallusers() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.error != null) {
-          console.log(data.error);
+          // console.log(data.error);
           setError(data.error);
+          return
         }
         if (data.statusCode != 200) {
           setError(data.message);
