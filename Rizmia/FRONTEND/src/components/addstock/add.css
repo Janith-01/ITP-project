@@ -1,0 +1,63 @@
+.addbackground{
+    
+        position: relative; /* Ensure child elements position correctly */
+        background-image: url("addstock1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;     
+    
+}
+
+
+.addStock{
+    width: 25%;
+    background-color: white;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.065);
+    border-radius: 5px;
+    margin: 40px auto;
+    padding: 50px;
+    
+}
+
+.addStockForm{
+    margin-top: 20px;
+    font-family: "Roboto" sans-serif;
+}
+
+.addStockForm .inputGroup{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.addStockForm .inputGroup label{
+    margin-bottom: 5px;
+    
+}
+
+.addStockForm .inputGroup input{
+    margin-bottom: 10px;
+    padding: 10px;
+    outline: none;
+}
+
+.addStockForm .inputGroup button{
+    border: 0;
+    outline: none;
+    background-color: purple;
+    color: white;
+    font-weight:600;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.065);
+    margin-top: 20px;
+}
+
+.addStock h3{
+    margin-top: 10px;
+}
+
+.error-text{
+    color: red;
+}
