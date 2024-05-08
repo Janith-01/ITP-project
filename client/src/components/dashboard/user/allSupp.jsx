@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar.js";
 import { toast } from 'react-hot-toast';
 import SendMailPage from "./SendMailPage.jsx";
 import jsPDF from 'jspdf';
 import 'jspdf-autotable'; // Import jspdf-autotable
+
 
 const SupplierPage = () => {
   const [suppliers, setSuppliers] = useState([]);
@@ -100,12 +101,17 @@ const SupplierPage = () => {
                       <td>{supplier.emailAddress}</td>
                       <td>{supplier.supplyingGoods}</td>
                       <td>
-                        <button onClick={() => handleSendMail(supplier.emailAddress) }>
-                          Send Mail
-                        </button>
+                        
+                      
+                      <a href={`mailto:${supplier.emailAddress}?subject=New%20Order%20from%20TUSKER&body=Dear%20${supplier.name},%0D%0A%0D%0AWe%20would%20like%20to%20inquire%20about%20the%20status%20of%20your%20order.%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ARegards,%0D%0AYour%20Company%20Name`}>Send Mail</a>
+
+                        <Link to={`/dashboard/allsupp/${supplier._id}/edit`}>Edit Supplier</Link>
+
                         <button onClick={() => handleRemoveSupplier(supplier._id)}>
                           Remove Supplier
                         </button>
+
+                        
                       </td>
                     </tr>
                   ))}
@@ -113,6 +119,7 @@ const SupplierPage = () => {
               </table>
               <button onClick={() => navigate("/dashboard/allsupp/addsupp")}>Add Supplier</button>
               <button onClick={downloadSupplierReport}>Supplier report</button>
+
             </div>
           </div>
         </div>

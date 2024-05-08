@@ -24,7 +24,13 @@ const reqOrderSchema = new mongoose.Schema({
     Status: {
         type: String,
         required: true
+    },
+    Amount: {
+        type: String,
+        
+        
     }
+    
 });
 
 const ReqOrder = mongoose.model('ReqOrder', reqOrderSchema);

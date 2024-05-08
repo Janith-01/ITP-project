@@ -38,6 +38,28 @@ const ReqOrderPage = () => {
     }
   };
 
+  const handleAmountChange = (id, newAmount) => {
+    const updatedReqOrders = reqOrders.map(reqOrder => {
+      if (reqOrder._id === id) {
+        return { ...reqOrder, Amount: newAmount };
+      }
+      return reqOrder;
+    });
+    setReqOrders(updatedReqOrders);
+  };
+
+  const saveAmount = async (id, newAmount) => {
+    try {
+      await axios.put(`http://localhost:8083/reqOrder/${id}`, { Amount: newAmount });
+      toast.success('Amount updated successfully');
+
+      // Refresh page after amount change
+      fetchReqOrders();
+    } catch (error) {
+      console.error('Error saving amount:', error);
+    }
+  };
+
   const filteredReqOrders = reqOrders.filter(reqOrder =>
     reqOrder.Request_ID.includes(searchTerm) ||
     reqOrder.Product_ID.includes(searchTerm) ||
@@ -90,6 +112,8 @@ const ReqOrderPage = () => {
                     <th>Requested Date</th>
                     <th>Status</th>
                     <th>Change Status</th>
+                    <th>Amount</th>
+                    <th>Save</th> 
                   </tr>
                 </thead>
                 <tbody>
@@ -101,11 +125,20 @@ const ReqOrderPage = () => {
                       <td>{reqOrder.Quantity}</td>
                       <td>{reqOrder.Requested_Date}</td>
                       <td>{reqOrder.Status}</td>
+    
                       <td>
                         <button className="btn btn-success" onClick={() => handleStatusChange(reqOrder._id, 'Approve')}>Approve</button>
                         <button className="btn btn-danger" onClick={() => handleStatusChange(reqOrder._id, 'Disapprove')}>Disapprove</button>
                         <button className="btn btn-warning" onClick={() => handleStatusChange(reqOrder._id, 'Pending')}>Pending</button>
                       </td>
+                      <td>LKR 
+                        <input
+                          type="Number"
+                          value={reqOrder.Amount}
+                          onChange={(e) => handleAmountChange(reqOrder._id, e.target.value)} // Handle amount change
+                        />
+                      </td>
+                      <td><button name= 'SaveAmount' onClick={() => saveAmount(reqOrder._id, reqOrder.Amount)}>Save</button></td>
                     </tr>
                   ))}
                 </tbody>

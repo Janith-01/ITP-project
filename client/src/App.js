@@ -12,12 +12,18 @@ import SupplyManager from "./components/dashboard/user/supplymanager";
 import AllSupp from "./components/dashboard/user/allSupp";
 import AddSupp from "./components/dashboard/user/addsupp";
 import SendMail from "./components/dashboard/user/SendMailPage.jsx";
+import supedit from "./components/dashboard/user/EditSupplierPage.jsx"
+import EditSupplierPage from "./components/dashboard/user/EditSupplierPage.jsx" // Ensure the correct path
+
 
 import axios from 'axios';
 import {Toaster} from 'react-hot-toast';
 
 axios.defaults.baseURL = 'http://localhost:8083';
 axios.defaults.withCredentials = true;
+
+
+
 
 function App() {
   return (
@@ -36,6 +42,7 @@ function App() {
             <Route path="/dashboard/allsupp/sendmail" element={<SendMail />} />
             <Route path="/dashboard/profile" element={<Profile />} />
             <Route path="/customer/home" element={<Customerhome />} />
+            <Route path={`/dashboard/allsupp/:id/edit`} element={<EditSupplierPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
