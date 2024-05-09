@@ -1,0 +1,71 @@
+/* Styles for the Home component */
+
+/* Set 100% height for html and body to cover the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles for the Home content */
+  .back {
+    text-align: center;
+    padding: 20px;
+    background-color: #70a9c3; /* Light gray background color */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    height: 100%; /* Take up 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Heading styles */
+  h1 {
+    font-size: 32px;
+    margin: 20px 0;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Paragraph styles */
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666; /* Medium gray te; *//* Styles for the Home component */
+
+    /* Container styles for the Home content */
+    .back {
+        text-align: center;
+        padding: 20px;
+        background-color: #505794; /* Light gray background color */
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        height: 100%;
+      }
+      
+      /* Heading styles */
+      h1 {
+        font-size: 32px;
+        margin: 20px 0;
+        color: #333; /* Dark text color */
+      }
+      
+      /* Paragraph styles */
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #666; /* Medium gray text color */
+      }
+      
+      /* Navigation link styles (assuming Nav component uses <Link /> from react-router-dom) */
+      .nav-link {
+        text-decoration: none;
+        color: #007bff; /* Primary link color */
+      }
+      
+      .nav-link:hover {
+        text-decoration: underline;
+      }
+      
+  }  

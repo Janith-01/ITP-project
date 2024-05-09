@@ -1,0 +1,50 @@
+/* AddAppointment.css */
+
+.add-appointment-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .add-appointment-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .add-appointment-container form {
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  .add-appointment-container label {
+    font-weight: bold;
+  }
+  
+  .add-appointment-container input[type="date"],
+  .add-appointment-container input[type="time"],
+  .add-appointment-container input[type="text"],
+  .add-appointment-container button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-appointment-container .error {
+    color: #dc3545;
+    font-size: 12px;
+  }
+  
+  .add-appointment-container button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-appointment-container button:hover {
+    background-color: #0056b3;
+  }
+  
