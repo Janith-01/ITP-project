@@ -1,11 +1,12 @@
-.addbackground{
+/*.addstockbackground{
     
-        position: relative; /* Ensure child elements position correctly */
+        position: relative; 
         background-image: url("addstock1.jpg");
         background-size: cover;
-        background-repeat: no-repeat;     
+        background-repeat: no-repeat;
+        min-height: 100vh; 
     
-}
+}*/
 
 
 .addStock{
