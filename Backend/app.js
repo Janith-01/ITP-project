@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 import router3 from './routes/totalAmountRoutes.js';
 import SalaryAdd from "./routes/SalaryRoutes.js";
 import router4 from './routes/totalExpenseRoutes.js';
-import Balance from './models/balanceModel.js';
+import router5 from './controllers/balanceController.js';
 
 dotenv.config();
 
@@ -28,28 +28,14 @@ app.use('/api/Sale', salesRoutes);
 app.use(router3);//Total Income Route
 app.use("/salaryAdd", SalaryAdd);
 app.use(router4);//Total Expense Route
+app.use(router5);//Total Balance Route
 
 // Root route
 app.get('/', (req, res) => {
     res.send('Server is working!');
 });
 
-app.post('/api/transactions/balance', async (req, res) => {
-    try {
-      const { totalIncome, totalExpense } = req.body;
-      const balance = totalIncome - totalExpense;
-      const newBalance = new Balance({ balance });
-  
-      await newBalance.save();
-  
-      res.status(201).json({ balance });
-    } catch (error) {
-      console.error('Error calculating and storing balance:', error.message);
-      res.status(500).json({ error: 'Internal server error' });
-    }
-  });
-
-
+// Start the server
 const server = () => {
     connectDB();
     app.listen(PORT, () => {
