@@ -86,7 +86,7 @@ function CreateReportingIncidentForm() {
                             id="phone"
                             value={formData.phone}
                             className="bg-slate-100 p-3 rounded-lg"
-                            pattern="^\d{10}$"  // Regular expression to match a 10-digit phone number
+                            pattern="^\d{10}$"                              // Regular expression to match a 10-digit phone number
                             title="Please enter a valid 10-digit phone number"  // Custom validation message
                             required
                         />
