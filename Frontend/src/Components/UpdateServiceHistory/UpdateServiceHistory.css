@@ -1,0 +1,32 @@
+.updateServiceHistory{
+    width: 30%;
+    background-color: rgb(231, 204, 229);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.updateServiceHistoryForm {
+    margin-top: 20px;
+}
+
+.updateServiceHistoryForm .inputGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.updateServiceHistoryForm .inputGroup label{
+    margin-bottom: 5px;
+    font-weight: bold;
+
+}
+
+.updateServiceHistoryForm .inputGroup input{
+    margin-bottom: 10px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+}

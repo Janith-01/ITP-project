@@ -1,0 +1,62 @@
+.bg1-background{
+  position: relative;
+  background-image: url("bg1.jpg");
+  margin-top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.addVehicle {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgb(246, 243, 245,0.8);
+    /* box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.065); */
+    border-radius: 10px;
+    padding: 50px
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 1px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  button {
+    background-color: #07325f;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .sButton{
+    margin-top: 10px;
+  }
+  
