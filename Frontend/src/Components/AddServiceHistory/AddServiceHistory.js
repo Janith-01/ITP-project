@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Nav from '../Nav/Nav';
+import VehicleNav from '../VehicleNav/VehicleNav';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "../AddServiceHistory/AddServiceHistory.css";
@@ -80,58 +80,44 @@ function AddServiceHistory() {
     return (
 
         <div className='bg2-background'>
-            <Nav />
+            <VehicleNav />
             <h1><center>Add Service History</center></h1>
             <form className='addServiceHistory' onSubmit={handleSubmit}>
                 <div className='inputGroup'>
                 <label>Vehicle Identification Number(VIN)</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z0-9]{17}" title='Enter 17 characters only. Space not Allowd' name="vin" onChange={handleChange} value={inputs.vin} required></input>
-                {errors.vin && <span style={{ color: 'red' }}>{errors.vin}</span>}
-                <br />
-                <br /></div>
+                {errors.vin && <span style={{ color: 'red' }}>{errors.vin}</span>}        
+                </div>
                 <div className='inputGroup'>
                 <label>Service Type</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z0-9 ]+" name="type" onChange={handleChange} value={inputs.type} required></input>
                 {errors.type && <span style={{ color: 'red' }}>{errors.type}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Service Date</label>
-                <br />
                 <input type="date" name="date" onChange={handleChange} value={inputs.date} required></input>
                 {errors.date && <span style={{ color: 'red' }}>{errors.date}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Description</label>
-                <br />
                 <input type="text"  name="description" onChange={handleChange} value={inputs.description} required></input>
                 {errors.description && <span style={{ color: 'red' }}>{errors.description}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Used Parts</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z0-9 ]+" name="parts" onChange={handleChange} value={inputs.parts} required></input>
                 {errors.parts && <span style={{ color: 'red' }}>{errors.parts}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Service Cost</label>
-                <br />
                 <input type="text"  name="cost" onChange={handleChange} value={inputs.cost} required></input>
                 {errors.cost && <span style={{ color: 'red' }}>{errors.cost}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Machanic Name</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z0-9 ]+" name="macanic" onChange={handleChange} value={inputs.macanic} required></input>
                 {errors.macanic && <span style={{ color: 'red' }}>{errors.macanic}</span>}
-                <br />
-                <br /></div>
+                </div>
                 
                 {/* - */}
                 <button>Submit</button>

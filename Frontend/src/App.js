@@ -7,7 +7,6 @@ import Vehicles from "./Components/VehicleDetails/Vehicles";
 import UpdateVehicles from "./Components/UpdateVehicle/UpdateVehicle";
 import AddServiceHistory from './Components/AddServiceHistory/AddServiceHistory';
 import ServicesHistory from './Components/ServiceHistoryDetails/ServicesHistory';
-import CostByMonth from './Components/MonthlyCost/CostByMonth';
 
 //commit
 
@@ -23,7 +22,6 @@ function App() {
           <Route path="/vehicledetails/:id" element={<UpdateVehicles/>}/>
           <Route path="/addservicehistory" element={<AddServiceHistory/>}/>
           <Route path="/servicehistorydetails" element={<ServicesHistory/>}/>
-          <Route path="/total-cost-by-month" element={<CostByMonth/>}/>
           
           
         </Routes>

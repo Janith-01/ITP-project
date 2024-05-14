@@ -198,7 +198,7 @@ const deleteServiceHistory = async (req, res, next) => {
     return res.status(200).json({ serviceHistory });
 };
 
-const getTotalCostByMonth = async (req, res, next) => {
+/*const getTotalCostByMonth = async (req, res, next) => {
     try {
         const totalCostByMonth = await ServiceHistory.aggregate([
             {
@@ -213,7 +213,7 @@ const getTotalCostByMonth = async (req, res, next) => {
         console.error("Error fetching total cost by month:", err);
         res.status(500).json({ message: "Internal server error" });
     }
-};
+};*/
 
 export { 
     getAllServicesHistory, 
@@ -221,5 +221,5 @@ export {
     getById, 
     updateServiceHistory, 
     deleteServiceHistory, 
-    getTotalCostByMonth 
+    //getTotalCostByMonth 
 };

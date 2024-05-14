@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Nav from '../Nav/Nav';
+import VehicleNav from '../VehicleNav/VehicleNav';
 //import "./ServiceHistoryDetails/serviceshistory.css"
 import axios from "axios";
 import ServiceHistory from '../ServiceHistory/ServiceHistory';
@@ -41,7 +41,7 @@ function ServicesHistory() {
 
   return (
     <div>
-      <Nav />
+      <VehicleNav />
       <h1><center>Service History Details</center></h1>
       <input
         onChange={(e) => setSearchQuery(e.target.value)}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Nav from '../Nav/Nav';
+import VehicleNav from '../VehicleNav/VehicleNav';
 import axios from "axios";
 import Vehicle from '../Vehicle/Vehicle';
 import { useReactToPrint } from "react-to-print";
@@ -40,7 +40,7 @@ function Vehicles() {
 
   return (
     <div>
-      <Nav />
+      <VehicleNav />
       <h1><center>Vehicle Details</center></h1>
       <input
         className='Searchbutton'

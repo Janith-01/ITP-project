@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Nav from "../Nav/Nav"
+import VehicleNav from "../VehicleNav/VehicleNav"
+
 
 function VehicleHome() {
   return (
     <div className='containerHome'>
-        <Nav/>
+        <VehicleNav/>
         <h1><center>Vehicle Management Dashboard</center></h1>
         <Link to="/addvehicle">
           <button className='buttonHome'>Add New Vehicle</button>

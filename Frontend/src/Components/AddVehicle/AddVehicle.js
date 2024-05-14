@@ -182,10 +182,10 @@ export default AddVehicle;*/
 
 
 import React, { useState } from 'react';
-import Nav from '../Nav/Nav';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../AddVehicle/AddVehicle.css';
+import VehicleNav from '../VehicleNav/VehicleNav';
 
 function AddVehicle() {
     const history = useNavigate();
@@ -296,79 +296,60 @@ function AddVehicle() {
     return (
 
         <div className='bg1-background'>
-            <Nav />
+            <VehicleNav />
             <h1><center>Add Vehicle</center></h1>
             <form className='addVehicle' onSubmit={handleSubmit}>
                 <div className='inputGroup'>
                 <label>Vehicle Identification Number(VIN)</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z0-9]{17}" title='Enter 17 characters only. Space not Allowd' name="vin" onChange={handleChange} value={inputs.vin} required></input>
                 {errors.vin && <span style={{ color: 'red' }}>{errors.vin}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Registration Number</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z0-9- ]{7}" title='Enter 7 characters only.' name="regNo" onChange={handleChange} value={inputs.regNo} required></input>
                 {errors.regNo && <span style={{ color: 'red' }}>{errors.regNo}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Make</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z ]+" title='Numbers not Allowd' name="make" onChange={handleChange} value={inputs.make} required></input>
                 {errors.make && <span style={{ color: 'red' }}>{errors.make}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Model</label>
-                <br />
                 <input type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" name="model" onChange={handleChange} value={inputs.model} required></input>
                 {errors.model && <span style={{ color: 'red' }}>{errors.model}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Year</label>
-                <br />
                 <input type="text"  pattern="[0-9]{4}" title='Letters not Allowd' name="year" onChange={handleChange} value={inputs.year} required></input>
                 {errors.year && <span style={{ color: 'red' }}>{errors.year}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Owner Name</label>
                 <br />
                 <input type="text" pattern="[a-zA-Z ]+" title='Numbers not Allowd' name="ownerName" onChange={handleChange} value={inputs.ownerName} required></input>
                 {errors.ownerName && <span style={{ color: 'red' }}>{errors.ownerName}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Owner NIC</label>
-                <br />
                 <input type="text" pattern="[0-9]{12}" title='Letters not Allowd' name="ownerNic" onChange={handleChange} value={inputs.ownerNic} required></input>
                 {errors.ownerNic && <span style={{ color: 'red' }}>{errors.ownerNic}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Owner Email</label>
-                <br />
                 <input type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title='Enter valid Email.' name="ownerEmail" onChange={handleChange} value={inputs.ownerEmail} required></input>
                 {errors.ownerEmail && <span style={{ color: 'red' }}>{errors.ownerEmail}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Owner Address</label>
-                <br />
                 <input type="text" pattern="[a-zA-Z0-9-, ]+" name="ownerAddress" onChange={handleChange} value={inputs.ownerAddress} required></input>
                 {errors.ownerAddress && <span style={{ color: 'red' }}>{errors.ownerAddress}</span>}
-                <br />
-                <br /></div>
+                </div>
                 <div className='inputGroup'>
                 <label>Contact Number</label>
-                <br />
                 <input type="text"  name="contactNo" onChange={handleChange} value={inputs.contactNo} required></input>
                 {errors.contactNo && <span style={{ color: 'red' }}>{errors.contactNo}</span>}
-                <br />
-                <br /></div>
+                </div>
 
                 <div className='sButton'>
                 <button>Submit</button>
