@@ -1,0 +1,167 @@
+/* stock.css */
+.stock-background {
+  position: relative;
+  background-image: url("stock1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.stockTable {
+  margin: 10px auto;
+  padding: 5px;
+  width: 60%;
+  font-size: 14px;
+}
+
+.stockTable table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.titleStock{
+  font-family: "Roboto" sans-serif;
+  font-size: 40px;
+  color:black;
+  text-align: center;
+  font-style:bold;
+ 
+}
+
+
+.addStockButton {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin-left: 200px;
+}
+
+
+.searchField {
+  font-family: "Roboto" sans-serif;
+  width: 200px;
+  padding: 8px;
+  margin-left: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.searchStockbutton {
+  font-family: "Roboto" sans-serif;
+  padding: 8px 20px;
+  background-color: rgba(102, 51, 153, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+ 
+}
+
+.searchStockbutton:hover {
+  background-color: rgba(107, 53, 168, 0.8);
+}
+
+th, td {
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-family: "Roboto" sans-serif;
+  padding: 10px;
+}
+
+th {
+  background-color: white;
+  color: black;
+  border-style: double;
+  border-top: #0b7dda;
+  border-bottom: #0b7dda;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+}
+
+.deleteStockButton,
+.editStockButton {
+  margin-right: 5px;
+  padding: 5px;
+  /*border: none;
+  border-radius: 50%;*/
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.deleteStockButton {
+  background-color: red; /* Red */
+  color: white;
+}
+
+.editStockButton {
+  background-color: blue; /* Blue */
+  color: white;
+}
+
+.deleteStockButton:hover,
+.editStockButton:hover {
+  background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+}
+
+
+.low-stock {
+  background-color: lightcoral;
+}
+
+/* Media query for print-specific styles */
+@media print {
+  .no-print {
+    display: none !important; /* Hide unwanted components */
+  }
+
+  .stockTable {
+    display: block;
+  }
+
+  .stockTable table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .stockTable th, .stockTable td {
+    padding: 10px;
+    border: 1px solid #000; /* Ensure visible borders */
+  }
+
+  .generateReport {
+    display: none; /* Hide the "Generate Report" button */
+    
+  }
+}
+
+
+.generateStockReport button {
+  background-color: #06a02a;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 300px;
+  cursor: pointer;
+}
+
+.generateStockReport  button:hover {
+  background-color: #0b7dda;
+}
+

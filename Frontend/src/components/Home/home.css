@@ -1,0 +1,98 @@
+/*.home-background{
+  position: relative; 
+  background-image: url("garage2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.title {
+    font-family:"Roboto" sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color:white;
+    text-align: center;
+    margin-top: 20px;
+  }*/
+
+
+
+  .home-background {
+    background-color: #f2f2f2;
+    height:100vh;
+  }
+
+  .dashboard-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 500px;
+    color: red;
+   
+  }
+  
+  .product-dashboard-container {
+    margin: 50px auto;
+    margin-left: 300px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+  .total-products {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .total-products-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .total-products-count {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /*total value*/
+
+  .value-dashboard-container {
+    margin: 50px auto;
+    margin-left: 300px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .total-value {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .total-value-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .total-value-count {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+ 

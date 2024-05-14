@@ -1,0 +1,157 @@
+/* Default styles for screen */
+.order-background {
+  position: relative;
+  background-image: url("order4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.reqOrderTable {
+  margin: 20px auto;
+  padding: 20px;
+  width: 60%;
+}
+
+
+.searchOrderButton {
+  font-family: "Roboto" sans-serif;
+  padding: 8px 20px;
+  background-color: rgba(102, 51, 153, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;margin: 10px;
+}
+
+.searchOrderButton:hover {
+  background-color: rgba(107, 53, 168, 0.8);
+}
+
+.addButton-order {
+  font-family: "Roboto" sans-serif;
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: rgba(102, 51, 153, 0.8);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.addButton-order:hover {
+  background-color: rgba(107, 53, 168, 0.8);
+}
+
+.input[type="text"], .searchbox {
+  font-family: "Roboto" sans-serif;
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button {
+  font-family: "Roboto" sans-serif;
+  padding: 8px 20px;
+  background-color: rgba(102, 51, 153, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(107, 53, 168, 0.8);
+}
+
+.searchbox{
+  font-family: "Roboto" sans-serif;
+  width: 200px;
+  padding: 8px;
+  margin-left: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+}
+
+.deleteOrderButton,
+.editOrderButton {
+  margin-right: 5px;
+  padding: 5px;
+  /*border: none;
+  border-radius: 50%;*/
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.deleteOrderButton {
+  background-color: red; /* Red */
+  color: white;
+}
+
+.editOrderButton {
+  background-color: blue; /* Blue */
+  color: white;
+}
+
+.deleteOrderButton:hover,
+.editOrderButton:hover {
+  background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+}
+
+/* Media query for print-specific styles */
+@media print {
+  .no-print {
+    display: none !important; /* Hide unwanted components */
+  }
+
+  .reqOrderTable {
+    display: block;
+  }
+
+  .reqOrderTable table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .reqOrderTable th, .reqOrderTable td {
+    padding: 10px;
+    border: 1px solid #000; /* Ensure visible borders */
+  }
+
+  .generateOrderReport {
+    display: none; /* Hide the "Generate Report" button */
+    
+  }
+}
+
+
+.generateOrderReport button {
+  background-color: #2196f3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.generateOrderReport  button:hover {
+  background-color: #0b7dda;
+}
+
+.ordertitle {
+  font-family: "Roboto" sans-serif;
+  font-size: 30px;
+  color: rgb(19, 15, 238);
+  text-align: center;
+}
