@@ -59,7 +59,7 @@ const AddOrder = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/reqorder/create", order);
+      const response = await axios.post("http://localhost:8083/reqorder/create", order);
       toast.success(response.data.msg, { position: "top-right" });
       navigate("/reqorder");
     } catch (error) {

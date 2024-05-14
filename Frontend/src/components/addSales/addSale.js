@@ -52,7 +52,7 @@ const AddSale = () => {
       return;
     }
     try {
-      await axios.post("http://localhost:8000/Sale/add", sale);
+      await axios.post("http://localhost:8083/Sale/add", sale);
       toast.success("Sale added successfully!", { position: "top-right" });
       navigate("/sales");
     } catch (error) {

@@ -268,7 +268,7 @@ const Add = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/api/create", stock);
+      const response = await axios.post("http://localhost:8083/api/create", stock);
       toast.success(response.data.msg, { position: "top-right" });
       navigate("/getstock");
     } catch (error) {

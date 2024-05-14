@@ -72,7 +72,7 @@ const Home = () => {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/getall');
+        const response = await axios.get('http://localhost:8083/api/getall');
         const stockData = response.data;
 
         // Calculate total quantity

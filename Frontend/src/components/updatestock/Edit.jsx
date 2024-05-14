@@ -24,7 +24,7 @@ const Edit = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/getone/${id}`)
+    axios.get(`http://localhost:8083/api/getone/${id}`)
       .then((response) => {
         const data = response.data;
         setStock(data);
@@ -87,7 +87,7 @@ const Edit = () => {
     }
 
     try {
-      await axios.put(`http://localhost:8000/api/update/${id}`, stock);
+      await axios.put(`http://localhost:8083/api/update/${id}`, stock);
       toast.success("Stock updated successfully", { position: "top-right" });
       navigate("/getstock");
     } catch (error) {

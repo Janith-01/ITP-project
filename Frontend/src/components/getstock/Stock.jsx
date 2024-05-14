@@ -15,7 +15,7 @@ const Stock = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:8000/api/getall");
+      const response = await axios.get("http://localhost:8083/api/getall");
       setStocks(response.data);
     };
     fetchData();
@@ -30,7 +30,7 @@ const Stock = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/getAll");
+      const response = await axios.get("http://localhost:8083/api/getAll");
       const filteredStocks = response.data.filter((stock) =>
         Object.values(stock).some((field) =>
           field.toString().toLowerCase().includes(searchQuery.toLowerCase())
@@ -69,7 +69,7 @@ const Stock = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:8000/api/delete/${stockId}`);
+        await axios.delete(`http://localhost:8083/api/delete/${stockId}`);
         setStocks((prevStock) =>
           prevStock.filter((stock) => stock._id !== stockId)
         );

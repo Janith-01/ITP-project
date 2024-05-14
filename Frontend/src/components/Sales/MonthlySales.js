@@ -13,7 +13,7 @@ const SalesByMonth = () => {
 
   const fetchSalesByMonth = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:8000/Sale/getSalesByMonth", {
+      const response = await axios.get("http://localhost:8083/Sale/getSalesByMonth", {
         params: { year, month },
       });
       setSalesData(response.data.sales);

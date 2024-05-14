@@ -14,7 +14,7 @@ const Sale = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:8000/Sale/getAll");
+      const response = await axios.get("http://localhost:8083/Sale/getAll");
       setSales(response.data);
     };
     fetchData();
@@ -30,7 +30,7 @@ const Sale = () => {
   //search
   const handleSearch = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/Sale/getAll");
+      const response = await axios.get("http://localhost:8083/Sale/getAll");
       const filteredSales = response.data.filter((sale) =>
         Object.values(sale).some((field) =>
           field.toString().toLowerCase().includes(searchQuery.toLowerCase())
@@ -45,7 +45,7 @@ const Sale = () => {
 
   const deleteSale = async (saleId) => {
     try {
-      await axios.delete(`http://localhost:8000/Sale/deleteSale/${saleId}`);
+      await axios.delete(`http://localhost:8083/Sale/deleteSale/${saleId}`);
       setSales((prevStock) =>
         prevStock.filter((sale) => sale._id !== saleId)
       );

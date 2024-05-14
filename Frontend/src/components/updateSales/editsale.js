@@ -26,7 +26,7 @@ const EditSale = () => {
   // Fetch the existing sale data
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/Sale/getOne/${id}`)
+      .get(`http://localhost:8083/Sale/getOne/${id}`)
       .then((response) => {
         response.data.dateSold = format(new Date(response.data.dateSold), "yyyy-MM-dd");
         setSale(response.data);
@@ -75,7 +75,7 @@ const EditSale = () => {
     }
 
     try {
-      await axios.put(`http://localhost:8000/Sale/updateSale/${id}`, sale);
+      await axios.put(`http://localhost:8083/Sale/updateSale/${id}`, sale);
       toast.success("Sale updated successfully!", { position: "top-right" });
       navigate("/sales");
     } catch (error) {

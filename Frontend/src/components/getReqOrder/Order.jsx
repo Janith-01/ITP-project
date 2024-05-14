@@ -13,7 +13,7 @@ const Order = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:8000/reqorder/getAll");
+      const response = await axios.get("http://localhost:8083/reqorder/getAll");
       setOrders(response.data);
     };
     fetchData();
@@ -30,7 +30,7 @@ const Order = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/reqorder/getAll");
+      const response = await axios.get("http://localhost:8083/reqorder/getAll");
       const filteredOrders = response.data.filter((order) =>
         Object.values(order).some((field) =>
           field.toString().toLowerCase().includes(searchQuery.toLowerCase())
@@ -45,7 +45,7 @@ const Order = () => {
 
   const deleteOrder = async (orderID) => {
     try {
-      await axios.delete(`http://localhost:8000/reqorder/delete/${orderID}`);
+      await axios.delete(`http://localhost:8083/reqorder/delete/${orderID}`);
       setOrders((prevOrders) => prevOrders.filter((order) => order._id !== orderID));
       toast.success("Order deleted successfully", { position: "top-right" });
     } catch (error) {

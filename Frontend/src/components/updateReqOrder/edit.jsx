@@ -52,7 +52,7 @@ const EditOrder = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/reqorder/getOne/${id}`)
+      .get(`http://localhost:8083/reqorder/getOne/${id}`)
       .then((response) => {
         response.data.Requested_Date = format(
           new Date(response.data.Requested_Date),
@@ -74,7 +74,7 @@ const EditOrder = () => {
     }
 
     try {
-      await axios.put(`http://localhost:8000/reqorder/update/${id}`, order);
+      await axios.put(`http://localhost:8083/reqorder/update/${id}`, order);
       toast.success("Order updated successfully", { position: "top-right" });
       navigate("/reqorder");
     } catch (error) {

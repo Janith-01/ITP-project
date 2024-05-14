@@ -11,7 +11,7 @@ const Notifications = () => {
     useEffect(() => {
         const fetchNotifications = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/notification/display');
+                const response = await axios.get('http://localhost:8083/notification/display');
                 setNotifications(response.data);
             } catch (error) {
                 console.error('Error fetching notifications:', error);
