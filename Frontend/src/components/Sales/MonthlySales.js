@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import "./MonthlySales.css";
-import Nav from "../Nav/Nav";
+import InventoryNav from '../InventoryNav/InventoryNav'
 
 const SalesByMonth = () => {
   const [salesData, setSalesData] = useState([]);
@@ -37,7 +37,7 @@ const SalesByMonth = () => {
 
   return (
     <div className="sales-by-month">
-      <Nav />
+     <InventoryNav/>
       <Link className="back-link no-print" to="/mainhome">Back</Link>
       <div className="printable-content" ref={reportRef}>
 

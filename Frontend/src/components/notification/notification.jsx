@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './notification.css'; // Import CSS file
-import Nav from '../Nav/Nav';
+import InventoryNav from '../InventoryNav/InventoryNav'
 
 const Notifications = () => {
     const [notifications, setNotifications] = useState([]);
@@ -24,7 +24,7 @@ const Notifications = () => {
     return (
         
         <div className="notifications-container">
-            <Nav/>
+          <InventoryNav/>
              <Link to={"/getstock"} className='back-button'><i className="fa-solid fa-hand-point-left"></i></Link>
             <h1 className="notifications-header">Stock Alert!!!</h1>
             <ul className="notification-list">

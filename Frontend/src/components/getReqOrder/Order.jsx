@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import "./order.css"; 
 import { Link } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
-import Nav from "../Nav/Nav";
+import InventoryNav from '../InventoryNav/InventoryNav'
 
 const Order = () => {
   const [orders, setOrders] = useState([]);
@@ -56,7 +56,7 @@ const Order = () => {
   return (
        
         <div  className="order-background">
-           <Nav/>
+          <InventoryNav/>
           
         {noResults ? (
             <p>No Orders Found</p>

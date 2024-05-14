@@ -190,7 +190,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./add.css";
 import axios from "axios";
 import toast from "react-hot-toast";
-import Nav from "../Nav/Nav";
+import InventoryNav from '../InventoryNav/InventoryNav'
 
 const Add = () => {
   const initialStock = {
@@ -279,7 +279,7 @@ const Add = () => {
   return (
     <div className="addstockbackground">
       <div className={`addStock ${highlight ? "low-stock" : ""}`}>
-        <Nav />
+        <InventoryNav/>
         <Link to={"/getstock"}>Back</Link>
 
         <h3>Add new stock</h3>

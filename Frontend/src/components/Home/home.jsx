@@ -61,7 +61,7 @@ const Home = () => {
 export default Home;*/
 
 import React, { useState, useEffect } from 'react';
-import Nav from '../Nav/Nav';
+import InventoryNav from '../InventoryNav/InventoryNav'
 import axios from 'axios';
 import './home.css'; 
 
@@ -92,8 +92,7 @@ const Home = () => {
 
   return (
     <div className='home-background'>
-      <Nav />
-     
+      <InventoryNav/>
         <div className='dashboard-title'>
           Inventory Management Dashboard
         </div>

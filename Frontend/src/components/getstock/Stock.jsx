@@ -6,7 +6,7 @@ import "./stock.css";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { useReactToPrint } from "react-to-print";
-import Nav from "../Nav/Nav";
+import InventoryNav from '../InventoryNav/InventoryNav'
 
 const Stock = () => {
   const [stocks, setStocks] = useState([]);
@@ -86,7 +86,7 @@ const Stock = () => {
   return (
     <div className="stock-background">
       <div className="searchDetails no-print">
-        <Nav />
+       <InventoryNav/>
 
         <Link to={"/add"} className="addStockButton no-print">
           Add Stock
