@@ -1,0 +1,37 @@
+/* AttendD.css */
+
+
+
+.container7topic {
+  margin-bottom: 10px;
+}
+.user-tableattend th, .user-tableattend td {
+  border: 1px solid #f9f7f7;
+  padding: 8px;
+  text-align: left;
+  color: black; /* Change font color to black */
+}
+.action-buttons1 button {
+  background-color: #670a53;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  background-color: #c82333;
+}
+
+/* Media query for print */
+
+@media print {
+  .no-print {
+    display: table-cell;
+  }
+
+  .AttendDownload {
+    display: none;
+  }
+}
