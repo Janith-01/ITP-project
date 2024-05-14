@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NewEmpUser from '../NewEmpUser/NewEmpUser';
-import Nav from '../Nav/Nav';
+import EmpNav from '../EmpNav/EmpNav';
 import { useNavigate } from 'react-router-dom';
  // Import useNavigate
 import './NewEmpDetails.css';
@@ -31,7 +31,7 @@ function NewEmpDetails() {
 
     return (
         <div className='New-container'>
-            <Nav />
+            <EmpNav />
             <br></br><br></br><br></br>
             <button onClick={handleAddNewEmployee} className='ANE'>Add New Employee</button>
             <h1>Employee Details</h1>

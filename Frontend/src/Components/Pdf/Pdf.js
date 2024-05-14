@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PdfComp from './PdfComp';
 import './Pdf.css'; 
-import Nav from "../Nav/Nav";
+import EmpNav from "../EmpNav/EmpNav";
 
 function Pdf() {
     const [title, setTitle] = useState('');
@@ -75,7 +75,7 @@ function Pdf() {
 
     return (
         <div className="container17">
-            <Nav/>
+            <EmpNav/>
             <br /><br />
             <div className="pdf-container">
                 <h1 className="pdf-title">Monthly Report</h1><br />

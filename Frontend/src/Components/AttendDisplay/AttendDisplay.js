@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useReactToPrint } from "react-to-print";
 import AttendD from '../AttendD/AttendD';
-import Nav from '../Nav/Nav';
+import EmpNav from '../EmpNav/EmpNav';
 import './AttendDisplay.css';
 
 
@@ -52,7 +52,7 @@ function AttendDisplay() {
 
   return (
     <div className='Attend-container'>
-      <Nav />
+      <EmpNav />
       <br />
       <div className="search-container">
         <input

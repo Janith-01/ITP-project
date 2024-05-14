@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import DutySuser from '../DutySuser/DutySuser';
-import Nav from "../Nav/Nav";
+import EmpNav from "../EmpNav/EmpNav";
 import { useReactToPrint } from "react-to-print";
 import './DutySDisplay.css'; // Import the CSS file
 
@@ -55,7 +55,7 @@ function DutySDisplay() {
 
   return (
     <div className="container18">
-      <Nav />
+      <EmpNav />
       <div ref={ComponentsRef}>
         <h1> Duty Schedule Display</h1>
         <div className="search-container1">

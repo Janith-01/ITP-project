@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Nav from "../Nav/Nav";
+import EmpNav from "../EmpNav/EmpNav";
 import axios from "axios";
 import Request from "../Request/Request";
 import { useReactToPrint } from "react-to-print";
@@ -54,7 +54,7 @@ const LRequestDisplay = () => {
 
   return (
     <div className='container21 '>
-      <Nav />
+      <EmpNav />
       <h1>Leave History</h1>
       <button onClick={handleAddNewLeave} className='ADL'>Add New Leave</button>
       <input

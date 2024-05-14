@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import Nav from "../Nav/Nav";
+import EmpNav from "../EmpNav/EmpNav";
 import './applyleave.css';
 
 function ApplyLeave() {
@@ -67,7 +67,7 @@ function ApplyLeave() {
 
   return (
     <div>
-      <Nav />
+      <EmpNav />
       <div className='container20'>
         <h1 className='Ah1'>Apply Leave</h1>
         <form ref={form} onSubmit={sendEmail} className='formH'>

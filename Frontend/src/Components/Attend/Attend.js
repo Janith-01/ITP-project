@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Nav from "../Nav/Nav";
+import EmpNav from "../EmpNav/EmpNav";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import './Attend.css';
@@ -77,7 +77,7 @@ function Attend() {
 
   return (
     <div className="container5">
-      <Nav />
+      <EmpNav />
       <h1>Attend Marking</h1>
       <form onSubmit={handleSubmit} className='form-Attend'>
         <label>Employee ID </label>

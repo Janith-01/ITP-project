@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Nav.css';
+import './EmpNav.css';
 import logo from '../../images/pic12.png'; // Import the image
 
 function Nav() {

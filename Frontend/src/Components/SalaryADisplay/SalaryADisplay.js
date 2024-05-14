@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SalaryAUser from '../SalaryAUser/SalaryAUser';
-import Nav from "../Nav/Nav";
+import EmpNav from "../EmpNav/EmpNav";
 import { useReactToPrint } from "react-to-print";
 import './SalaryADisplay.css'; // Import the CSS file
 
@@ -56,7 +56,7 @@ function SalaryADisplay() {
 
     return (
         <div className="container12">
-            <Nav />
+            <EmpNav />
             <br /><br /> 
             <div className="buttons-container">
                 <Link to="/SalaryAdd">
