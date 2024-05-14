@@ -11,7 +11,9 @@ import employeeRoutes from "./Routes/EmployeeRoutes.js";
 import NewEmpRoutes from "./Routes/NewEmpRoutes.js";
 import pdfRoutes from "./Routes/PdfRoutes.js";
 import pdfSchema from "./Model/pdfModel.js";
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 const app = express();
 
@@ -22,7 +24,7 @@ app.use(cors());
 app.use("/files", express.static("files"));
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://employee:tle7u6Kl1tdbwAGY@cluster0.dh9vw91.mongodb.net/")
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -31,6 +33,7 @@ mongoose.connect("mongodb+srv://employee:tle7u6Kl1tdbwAGY@cluster0.dh9vw91.mongo
     process.exit(1);
   });
 
+ 
 // Handle authentication
 app.post("/authenticate", async (req, res) => {
   const { email, managerId } = req.body;
@@ -140,5 +143,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
 
 
