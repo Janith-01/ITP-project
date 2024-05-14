@@ -1,0 +1,66 @@
+.container8 {
+    background-image: url('/F:/2ND YEAR/2ND SEM/ITP/frontend/src/images/pic1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Use minimum height to cover the viewport */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 20px;
+    flex-direction: column; /* Stack items vertically */
+}
+
+
+
+.container h1 {
+    color: white;
+    text-align: center; 
+    /* Change text color to white */
+}
+
+.form-dutyupdate{
+    background-color: rgba(246, 243, 245, 0.8);
+    padding: 20px;
+   /* Reduce maximum width for better readability */
+    width: 40%;
+    height: 750px;
+
+}
+
+.container label {
+    display: block; /* Making labels block-level elements */
+    margin-bottom: 10px;
+    height: 60px; /* Increase height to 60px */
+}
+
+.container input {
+    width: 100%; /* Making input fields fill the container width */
+    padding: 10px; /* Adding padding */
+    margin-bottom: 15px; /* Adding margin to the bottom */
+    border: 1px solid #ccc; /* Adding border */
+    border-radius: 5px; /* Adding border radius */
+    height: 40px; /* Increase height to 60px */
+}
+
+.container textarea {
+    width: 100%; /* Making textarea fill the container width */
+    padding: 10px;
+    background-size: 50px;
+    margin-bottom: 15px; /* Adding margin to the bottom */
+    border: 1px solid #ccc; /* Adding border */
+    border-radius: 5px; /* Adding border radius */
+}
+
+.container button {
+    background-color: #007bff; /* Changing button background color */
+    color: white; /* Changing button text color */
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.container button:hover {
+    background-color: #0056b3; 
+}

@@ -1,0 +1,59 @@
+/* AttendDisplay.css */
+
+.Attend-container {
+  background-color: cadetblue;
+  background-size: auto;
+  height: 1400px;
+  width: 1535px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.ID {
+  margin-right: 500px;
+  margin-left: 500px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.user-tableattend {
+  width: 95%;
+  border-collapse: collapse;
+  height: 20px;
+  padding-left: 0px;
+}
+
+.user-tableattend1 {
+  background-color: #f2f2f2;;
+  font-size: 20px;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
+}
+
+.AttendDownload {
+  margin-top: 10px;
+  background-color: #670a53;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.no-print {
+  display: none;
+}
+
+/* Add a separator line */
+.separator-line {
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+

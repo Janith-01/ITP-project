@@ -1,0 +1,32 @@
+.container22{
+    background-image: url('/F:/2ND YEAR/2ND SEM/ITP/frontend/src/images/pic1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Use minimum height to cover the viewport */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 20px;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.form-leave {
+    background-color: rgba(246, 243, 245, 0.8);
+    padding: 20px;
+   /* Reduce maximum width for better readability */
+   width: 40%;
+    height: 1000px;
+    margin-left: 100px;
+  }
+.lR{
+  background-color: rgb(58, 70, 193);
+  text-align: center;
+  margin-left: 210px;
+}
+  .textarea{
+    height: 200px;
+  }
+  .Rh1{
+    font-size: 20px;
+  }
+  
