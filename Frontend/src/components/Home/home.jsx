@@ -93,26 +93,22 @@ const Home = () => {
   return (
     <div className='home-background'>
       <InventoryNav/>
-        <div className='dashboard-title'>
-          Inventory Management Dashboard
-        </div>
-        <div className='product-dashboard-container'>
+      <div className='dashboard-title'>
+        Inventory Management Dashboard
+      </div>
+      <div className='product-value-container'>
         <div className='total-products'>
           <div className='total-products-title'><i className="fa-solid fa-bag-shopping"></i> Total Products in Stock:</div>
           <div className='total-products-count'>{totalProducts}</div>
         </div>
-        </div>
 
-        <div className='value-dashboard-container'>
         <div className='total-value'>
           <div className='total-value-title'><i className="fa-solid fa-sack-dollar"></i> Total Value of Products (LKR):</div>
           <div className='total-value-count'>{totalValue}</div>
         </div>
-        </div>
-  </div>
-    
+      </div>
+    </div>
   );
 }
 
 export default Home;
-
