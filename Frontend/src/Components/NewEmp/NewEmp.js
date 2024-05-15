@@ -31,7 +31,7 @@ function NewEmp() {
     };
 
     const sendRequest = async () => {
-        await axios.post("http://localhost:5000/NewEmp", {
+        await axios.post("http://localhost:8083/NewEmp", {
             name: String(user.name),
             gmail: String(user.gmail),
             jobRole: String(user.jobRole),

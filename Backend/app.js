@@ -181,7 +181,7 @@ mongoose.connect(MONGO_URL)
     process.exit(1);
   });
 
- 
+ //------------------------------------------------------------------------
 // Handle authentication
 app.post("/authenticate", async (req, res) => {
   const { email, managerId } = req.body;
