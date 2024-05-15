@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
  // Import useNavigate
 import './NewEmpDetails.css';
 
-const URL = "http://localhost:5000/NewEmp";
+const URL = "http://localhost:8083/NewEmp";
 
 function NewEmpDetails() {
     const [users, setUsers] = useState([]);

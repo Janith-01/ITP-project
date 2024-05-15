@@ -6,7 +6,7 @@ import EmpNav from "../EmpNav/EmpNav";
 import { useReactToPrint } from "react-to-print";
 import './SalaryADisplay.css'; // Import the CSS file
 
-const URL = "http://localhost:5000/salaryAdd";
+const URL = "http://localhost:8083/salaryAdd";
 
 function SalaryADisplay() {
     const [salaries, setSalaries] = useState([]);

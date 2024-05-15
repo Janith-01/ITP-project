@@ -75,7 +75,7 @@ function DutySchedule() {
   };
 
   const sendRequest = async () => {
-    await axios.post("http://localhost:5000/schedule", {
+    await axios.post("http://localhost:8083/schedule", {
       Eid: String(user.Eid),
       name: String(user.name),
       Month: String(user.Month),

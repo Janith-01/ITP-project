@@ -67,7 +67,7 @@ function Leaverequest() {
         }
 
         try {
-            await axios.post("http://localhost:5000/leaverequest", user);
+            await axios.post("http://localhost:8083/leaverequest", user);
             alert("Add Success");
             navigate("/displayrequest"); // Navigate to /displayrequest route
         } catch (err) {

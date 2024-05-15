@@ -10,7 +10,7 @@ function NewEmpUser(props) {
 const history = useNavigate();
 
     const deleteHandler = async() => {
-      await axios.delete(`http://localhost:5000/NewEmp/${_id}`)
+      await axios.delete(`http://localhost:8083/NewEmp/${_id}`)
       .then(res=>res.data)
       .then(() => history("/"))
       .then(() => history("/NewEmpDetails"))

@@ -7,7 +7,7 @@ import EmpNav from '../EmpNav/EmpNav';
 import './AttendDisplay.css';
 
 
-const URL = 'http://localhost:5000/attend';
+const URL = 'http://localhost:8083/attend';
 
 function AttendDisplay() {
   const [users, setUsers] = useState([]);

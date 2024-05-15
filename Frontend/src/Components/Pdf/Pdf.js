@@ -17,7 +17,7 @@ function Pdf() {
 
     const getpdf = async () => {
         try {
-            const result = await axios.get('http://localhost:5000/getFile');
+            const result = await axios.get('http://localhost:8083/getFile');
             setAllPdf(result.data.data || []);
         } catch (error) {
             console.error('Error fetching PDF files:', error);
@@ -37,7 +37,7 @@ function Pdf() {
         formData.append('file', file);
 
         try {
-            const result = await axios.post('http://localhost:5000/uplodefile', formData, {
+            const result = await axios.post('http://localhost:8083/uplodefile', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
 
@@ -54,13 +54,13 @@ function Pdf() {
     };
 
     const showPdf = (pdf) => {
-        const pdfUrl = `http://localhost:5000/files/${pdf}`;
+        const pdfUrl = `http://localhost:8083/files/${pdf}`;
         window.open(pdfUrl, '_blank');
     };
 
     const deletePdf = async (pdfId) => {
         try {
-            const result = await axios.delete(`http://localhost:5000/deletePdf/${pdfId}`);
+            const result = await axios.delete(`http://localhost:8083/deletePdf/${pdfId}`);
             if (result.data.status === 200) {
                 alert('Report deleted successfully');
                 getpdf();

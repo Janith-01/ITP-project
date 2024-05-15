@@ -10,7 +10,7 @@ function SalaryAUser(props) {
 
     const deleteHandler = async () => {
         if (window.confirm("Do you want to delete this?")) {
-            await axios.delete(`http://localhost:5000/salaryAdd/${_id}`)
+            await axios.delete(`http://localhost:8083/salaryAdd/${_id}`)
                 .then(res => res.data)
                 .then(() => history("/"))
                 .then(() => history("/SalaryADisplay"));

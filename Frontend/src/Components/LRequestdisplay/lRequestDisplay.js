@@ -6,7 +6,7 @@ import { useReactToPrint } from "react-to-print";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import './lRequestdisplay.css'; 
 
-const URL = "http://localhost:5000/leaverequest";
+const URL = "http://localhost:8083/leaverequest";
 
 const LRequestDisplay = () => {
   const navigate = useNavigate(); // Get access to the navigate function

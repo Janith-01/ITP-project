@@ -6,7 +6,7 @@ import EmpNav from "../EmpNav/EmpNav";
 import { useReactToPrint } from "react-to-print";
 import './DutySDisplay.css'; // Import the CSS file
 
-const URL = "http://localhost:5000/schedule";
+const URL = "http://localhost:8083/schedule";
 
 function DutySDisplay() {
   const [users, setUsers] = useState([]);

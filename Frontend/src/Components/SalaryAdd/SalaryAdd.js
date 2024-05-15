@@ -113,7 +113,7 @@ function SalaryAdd() {
 
     const sendRequest = async () => {
         try {
-            const response = await axios.post("http://localhost:5000/salaryAdd", {
+            const response = await axios.post("http://localhost:8083/salaryAdd", {
                 EmpID: String(user.EmpID),
                 Month: String(user.Month),
                 Job_Role: String(user.Job_Role),

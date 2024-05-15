@@ -10,7 +10,7 @@ function Request(props) {
     const history = useNavigate();
 
     const deleteHandler = async () => {
-        await axios.delete(`http://localhost:5000/leaverequest/${_id}`)
+        await axios.delete(`http://localhost:8083/leaverequest/${_id}`)
             .then(() => {
                 alert("Request deleted successfully");
                 history("/displayrequest");
