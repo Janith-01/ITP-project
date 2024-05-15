@@ -77,8 +77,8 @@ function Vehicle({ vehicle }) {
       <td>{ownerAddress}</td>
       <td>{contactNo}</td>
       <td className={`acctionButtons no-print`}>
-        <Link to={`/vehicledetails/${_id}`}>Update</Link>
-        <button onClick={deleteHandler}>Delete</button>
+        <Link to={`/vehicledetails/${_id}`} className='updatebtn'>Update</Link>
+        <button onClick={deleteHandler} className='deletebtn'>Delete</button>
       </td>
     </tr>
   );

@@ -1,0 +1,20 @@
+.Searchbutton {
+    font-family: "Roboto" sans-serif;
+    width: 200px;
+    padding: 8px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .searchbtn {
+    font-family: "Roboto" sans-serif;
+    padding: 8px 20px;
+    background-color: rgba(102, 51, 153, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+  }

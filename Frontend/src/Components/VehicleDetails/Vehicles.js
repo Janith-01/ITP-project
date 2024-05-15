@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import VehicleNav from '../VehicleNav/VehicleNav';
 import axios from "axios";
 import Vehicle from '../Vehicle/Vehicle';
+//import '../vehicles/vehicles.css';
 import { useReactToPrint } from "react-to-print";
 
 const URL = "http://localhost:8083/vehicles";
@@ -51,7 +52,7 @@ function Vehicles() {
       ></input>
       <br></br>
       <br></br>
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch} className='searchbtn'>Search</button>
       <br></br>
       <br></br>
       {noResults ? (

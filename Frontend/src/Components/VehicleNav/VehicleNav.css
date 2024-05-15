@@ -1,5 +1,5 @@
 .nav{
-    width: 1400px;
+    width: 1455px;
     margin-right: 0;
 
 }
@@ -9,7 +9,7 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: #996390;
+    background-color: #670a53;
     overflow: hidden;
     height: auto;
 }
@@ -36,7 +36,7 @@
 
 /* Style for the active link */
 .home-a.active {
-    background-color: #996390; /* Background color of the active link */
+    background-color: #670a53; /* Background color of the active link */
 }
 
 /* Style for the h1 within the link */
