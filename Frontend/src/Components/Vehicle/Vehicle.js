@@ -58,7 +58,7 @@ function Vehicle({ vehicle }) {
 
   const deleteHandler = async () => {
     await axios
-      .delete(`http://localhost:5000/vehicles/${_id}`)
+      .delete(`http://localhost:8083/vehicles/${_id}`)
       .then(() => history("/"))
       .then(() => history("/vehicledetails"));
   };

@@ -4,7 +4,7 @@ import axios from "axios";
 import Vehicle from '../Vehicle/Vehicle';
 import { useReactToPrint } from "react-to-print";
 
-const URL = "http://localhost:5000/vehicles";
+const URL = "http://localhost:8083/vehicles";
 
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);

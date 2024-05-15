@@ -279,7 +279,7 @@ function AddVehicle() {
     };
 
     const sendRequest = async () => {
-        await axios.post("http://localhost:5000/vehicles", {
+        await axios.post("http://localhost:8083/vehicles", {
             vin: String(inputs.vin),
             regNo: String(inputs.regNo),
             make: String(inputs.make),

@@ -5,7 +5,7 @@ import axios from "axios";
 import ServiceHistory from '../ServiceHistory/ServiceHistory';
 import { useReactToPrint } from "react-to-print";
 
-const URL = "http://localhost:5000/serviceshistory";
+const URL = "http://localhost:8083/serviceshistory";
 
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);

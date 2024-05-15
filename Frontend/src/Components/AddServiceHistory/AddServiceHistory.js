@@ -66,7 +66,7 @@ function AddServiceHistory() {
     };
 
     const sendRequest = async () => {
-        await axios.post("http://localhost:5000/serviceshistory", {
+        await axios.post("http://localhost:8083/serviceshistory", {
             vin: String(inputs.vin),
             type: String(inputs.type),
             date: String(inputs.date),

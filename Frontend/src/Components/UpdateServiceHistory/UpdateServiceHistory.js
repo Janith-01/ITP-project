@@ -15,7 +15,7 @@ function UpdateServiceHistory() {
     useEffect(()=>{
         const fetchHandler = async ()=>{
             await axios
-            .get(`http://localhost:5000/serviceshistory/${id}`)
+            .get(`http://localhost:8083/serviceshistory/${id}`)
             .then((res)=> res.data)
             .then((data)=> setInputs(data.servicehistory));
         };
@@ -24,7 +24,7 @@ function UpdateServiceHistory() {
 
     const sendRequest = async ()=>{
         await axios
-        .put(`http://localhost:5000/serviceshistory/${id}`,{
+        .put(`http://localhost:8083/serviceshistory/${id}`,{
             vin: String(inputs.vin),
             type: String(inputs.type),
             date: Date(inputs.date),

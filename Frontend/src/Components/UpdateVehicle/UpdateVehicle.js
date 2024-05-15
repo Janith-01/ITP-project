@@ -15,7 +15,7 @@ function UpdateVehicle() {
     useEffect(()=>{
         const fetchHandler = async ()=>{
             await axios
-            .get(`http://localhost:5000/vehicles/${id}`)
+            .get(`http://localhost:8083/vehicles/${id}`)
             .then((res)=> res.data)
             .then((data)=> setInputs(data.vehicle));
         };
@@ -24,7 +24,7 @@ function UpdateVehicle() {
 
     const sendRequest = async ()=>{
         await axios
-        .put(`http://localhost:5000/vehicles/${id}`,{
+        .put(`http://localhost:8083/vehicles/${id}`,{
             vin: String (inputs.vin),
             regNo: String (inputs.regNo),
             make: String (inputs.make),

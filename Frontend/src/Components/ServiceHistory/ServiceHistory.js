@@ -11,7 +11,7 @@ function ServiceHistory({ servicehistory }) {
 
   const deleteHandler = async () => {
     await axios
-      .delete(`http://localhost:5000/serviceshistory/${_id}`)
+      .delete(`http://localhost:8083/serviceshistory/${_id}`)
       .then(() => history("/"))
       .then(() => history("/servicehistorydetails"));
   };
