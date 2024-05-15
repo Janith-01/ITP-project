@@ -22,7 +22,7 @@ function SalaryUpdate() {
     useEffect(() => {
         const fetchHandler = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/salaryAdd/${_id}`);
+                const response = await axios.get(`http://localhost:8083/salaryAdd/${_id}`);
                 setInputs(response.data.data); // Set inputs with response data
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -75,7 +75,7 @@ function SalaryUpdate() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/salaryAdd/${_id}`, {
+            await axios.put(`http://localhost:8083/salaryAdd/${_id}`, {
                 EmpID: String(inputs.EmpID),
                 Month: String(inputs.Month),
                 Job_Role: String(inputs.Job_Role),

@@ -9,7 +9,7 @@ function AttendD({ user }) {
 
   const deleteHandler = async () => {
     try {
-      await axios.delete(`http://localhost:5000/attend/${_id}`);
+      await axios.delete(`http://localhost:8083/attend/${_id}`);
       window.location.reload(); // Reload the page after deletion
     } catch (error) {
       console.error('Error deleting attendance record:', error);

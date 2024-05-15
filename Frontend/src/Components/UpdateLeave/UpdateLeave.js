@@ -13,7 +13,7 @@ function UpdateLeave() {
     useEffect(() => {
         const fetchHandler = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/leaverequest/${_id}`);
+                const response = await axios.get(`http://localhost:8083/leaverequest/${_id}`);
                 setInputs(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -24,7 +24,7 @@ function UpdateLeave() {
 
     const sendRequest = async () => {
         try {
-            await axios.put(`http://localhost:5000/leaverequest/${_id}`, inputs);
+            await axios.put(`http://localhost:8083/leaverequest/${_id}`, inputs);
             alert("Request updated successfully");
         } catch (error) {
             console.error('Error updating leave request:', error);

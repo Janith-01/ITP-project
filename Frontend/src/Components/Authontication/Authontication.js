@@ -19,7 +19,7 @@ function Authentication() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/authenticate', formData);
+      const response = await axios.post('http://localhost:8083/authenticate', formData);
       if (response.data.authenticated) {
         if (response.data.navigateToManagerView) {
           navigate('/managerView');

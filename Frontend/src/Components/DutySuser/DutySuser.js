@@ -9,7 +9,7 @@ function DutySuser(props) {
   const history = useNavigate();
 
   const deleteHandler = async () => {
-    await axios.delete(`http://localhost:5000/schedule/${_id}`)
+    await axios.delete(`http://localhost:8083/schedule/${_id}`)
       .then(res => res.data)
       .then(() => history("/"))
       .then(() => history("/dutyScheduleD"));
