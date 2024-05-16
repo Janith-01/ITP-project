@@ -45,7 +45,7 @@ function NewEmp() {
 
     return (
         <div className='container16'>
-            <h1>Employee Details</h1>
+            <h1>Add New Employee</h1>
             <button onClick={handleViewDetails}>View Details</button>
             <form onSubmit={handleSubmit} className='form-Salary1'>
             <label>Name</label><br />
