@@ -1,0 +1,160 @@
+/* sale.css */
+
+
+.saleBackground {
+  position: relative; /* Ensure child elements position correctly */
+  background-image: url("sale1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+}
+
+.searchDetails {
+    padding: 50px;
+  }
+  
+  .sale-table {
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%; /* Decreased the width from 80% to 60% */
+    
+  }
+  
+  .sale-table table {
+    width: 100%; /* This keeps the inner table at full width within the parent container */
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .addSaleButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .searchSaleField {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .searchSalebutton {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .searchSalebutton:hover {
+    background-color: #45a049;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: white;
+    color: black;
+    border-style: double;
+    border-top: #0b7dda;
+    border-bottom: #0b7dda;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .actionButton {
+    display: flex;
+    align-items: center;
+  }
+  
+  .deleteSaleButton,
+  .editSaleButton {
+    margin-right: 5px;
+    padding: 5px;
+    /*border: none;
+    border-radius: 50%;*/
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deleteSaleButton {
+    background-color: red; /* Red */
+    color: white;
+  }
+  
+  .editSaleButton {
+    background-color: blue; /* Blue */
+    color: white;
+  }
+  
+  .deleteSaleButton:hover,
+  .editSaleButton:hover {
+    background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+  }
+  
+  
+  .generateSaleReport button {
+    background-color: #2196f3;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .generateSaleReport button:hover {
+    background-color: #0b7dda;
+  }
+  
+  .Saletitle {
+    font-family: "Roboto" sans-serif;
+    font-size: 30px;
+    color: rgb(19, 15, 238);
+    text-align: center;
+  }
+  
+  /* Media query for print-specific styles */
+@media print {
+  .no-print {
+    display: none !important; /* Hide unwanted components */
+  }
+
+  .sale-table {
+    display: block;
+  }
+
+  .sale-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .sale-table th, .sale-table td {
+    padding: 10px;
+    border: 1px solid #000; /* Ensure visible borders */
+  }
+
+  .generateSaleReport {
+    display: none; /* Hide the "Generate Report" button */
+    
+  }
+}

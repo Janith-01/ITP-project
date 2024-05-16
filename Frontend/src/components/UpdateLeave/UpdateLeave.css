@@ -1,0 +1,20 @@
+.container25{
+    background-image: url('../../images/pic9.jpg');
+    max-width: 2000px;
+    margin: 0 auto;
+    margin-top: 0cm;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 0 auto;
+    height: 1300px;
+  }
+
+
+  .form-leaveUpdate {
+    background-color: rgba(246, 243, 245, 0.8);
+    padding: 20px;
+   /* Reduce maximum width for better readability */
+    width: 40%;
+    height: 900px;
+    margin-left: 350px;
+}

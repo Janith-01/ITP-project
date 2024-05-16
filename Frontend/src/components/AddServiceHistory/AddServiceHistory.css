@@ -1,0 +1,87 @@
+/*.addServiceHistory{
+    width: 30%;
+    background-color: rgb(231, 204, 229);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.addServiceHistoryForm {
+    margin-top: 20px;
+}
+
+.addServiceHistoryForm .inputGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addServiceHistoryForm .inputGroup label{
+    margin-bottom: 5px;
+    font-weight: bold;
+
+}
+
+.addServiceHistoryForm .inputGroup input{
+    margin-bottom: 10px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+}*/
+
+.bg2-background{
+  position: relative;
+  background-image: url("bg2.jpg");
+}
+
+.addServiceHistory {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgb(231, 204, 229);
+    box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.065);
+    border-radius: 10px;
+    padding: 50px
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  button {
+    background-color: #07325f;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }

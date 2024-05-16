@@ -1,0 +1,107 @@
+/* Container styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+/* Search input styles */
+.search-container {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #80bdff;
+}
+
+/* Button styles */
+.button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #218838;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+th {
+  text-align: left;
+  color: #007bff;
+}
+
+td {
+  color: #495057;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Update and Delete button styles */
+.action-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.update-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.update-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.back{
+  background-color: #0056b3;
+}

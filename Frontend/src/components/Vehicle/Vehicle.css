@@ -1,0 +1,57 @@
+.vehicleTable{
+    width: 90%;
+    background-color: rgb(242, 235, 242);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+
+.vehicleTable table{
+    width: 100%;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+.vehicleTable table thead th{
+    /* background-color: rgb(121, 80, 115); */
+    color: white;
+    padding: 10px;
+}
+
+.vehicleTable table tbody td{
+    padding: 10px;
+    text-align: center;
+}
+
+.acctionButtons button{
+    border: 0;
+    outline: none;
+    background-color: rgb(31, 40, 147);
+    padding: 8px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+.acctionButtons a{
+    background-color: rgb(45, 114, 90);
+    padding: 8px 10px;
+    color: white;
+    border-radius: 5px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+}

@@ -1,0 +1,119 @@
+/* Pdf.css */
+.container17 {
+  background-image: url('../../images/pic8.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  height: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+} 
+
+.pdf-container {
+  max-width: 500px;
+  margin: 0 auto;
+  color:  #3e043d;
+  height: 100px;
+  margin-top: 0px;
+}
+
+.pdf-form {
+  height: 280px;
+  counter-reset: black;
+  margin-bottom: 0px;
+  background-color: rgba(246, 243, 245, 0.8);
+  padding: 20px;
+}
+
+h4 {
+  height: 30px;
+}
+
+.pdf-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pdf-page {
+  margin: 20px 0;
+}
+
+.pdf-page-num {
+  text-align: center;
+}
+
+.pdf-btn {
+  padding: 10px;
+  background-color: #0f0f0f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.pdf-btn:hover {
+  background-color: #3e043d;
+}
+
+.pdf-title {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  
+}
+
+.pdf-title input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #0f0f0f;
+}
+
+.pdf-upload {
+  margin-bottom: 20px;
+}
+
+.pdf-upload input[type="file"] {
+  display: none;
+}
+
+.pdf-upload-label {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pdf-upload-label:hover {
+  background-color: #0056b3;
+}
+
+.pdf-h1 {
+  height: 50px;
+  font-size: 25px;
+  color: #fff;
+}
+
+.pdf-h4 {
+  height: 70px;
+  font-size: 50px;
+  background-color:rgba(246, 243, 245, 0.8);
+  /* background-size: cover; */
+  font-display: center;
+  /* width: 800px; */
+  padding-left: 80px;
+  
+ 
+}
+
+.pdfFile {
+  height: 500px;
+  width: 600px;
+}

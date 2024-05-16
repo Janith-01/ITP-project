@@ -1,0 +1,107 @@
+.container12 {
+  background-color: cadetblue;
+  background-size: auto;
+  height: 1000px;
+  width: 1500px;
+
+}
+
+.s1{
+  background-image: url('../../images/pic4.jpg');
+}
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+.new-salary-button{
+  color: #fdfcfc;
+  background-color: #670a53;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-size: 18px;
+  
+}
+input[name="search"] {
+  padding: 5px 30px 5px 10px;
+  background-color: rgba(246, 243, 245, 0.8);
+  color: rgba(246, 243, 245, 0.8);
+  width: 154px;
+  height: 36px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* background-image: url('/F:/2ND YEAR/2ND SEM/ITP/frontend/src/images/pic4.jpg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px; */
+  margin-left: 30px;
+}
+
+input[name="search"]:focus {
+  width: 200px;
+}
+
+button[name="search"] {
+  padding: 5px 30px 5px 10px;
+  background-color: #e5e7ea;
+  color: #0b0b0b;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}
+
+.no-results-message {
+  color: red;
+  font-weight: bold;
+}
+
+.duty-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.duty-schedule-table th,
+.duty-schedule-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.duty-schedule-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.duty-schedule-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.duty-schedule-table tr:hover {
+  background-color: #f0f0f0;
+}
+
+.D1 {
+  background-color: #373b40;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.D1:hover {
+  background-color: #0056b3;
+}
+
+.S1{
+  background-color: #670a53;
+}
+
+.S1:hover{
+  background-color: #007bff;
+}
