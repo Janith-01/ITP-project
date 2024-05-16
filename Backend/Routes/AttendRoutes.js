@@ -1,7 +1,24 @@
 import express from 'express';
 import Attend from '../Model/Attend.js';
+import NewEmployee from '../Model/NewEmpModel.js';
 
 const router = express.Router();
+
+// Validate Employee ID
+router.post('/validate', async (req, res) => {
+    const { Eid } = req.body;
+    try {
+        const employee = await NewEmployee.findOne({ Eid });
+        if (employee) {
+            res.json({ isValid: true });
+        } else {
+            res.json({ isValid: false });
+        }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 
 // Get all attendance records
 router.get('/', async (req, res) => {

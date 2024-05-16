@@ -209,6 +209,8 @@ app.use("/Employeeadd", employeeRoutes);
 app.use("/NewEmp", NewEmpRoutes);
 app.use("/", pdfRoutes);
 
+
+
 // Define storage for multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
