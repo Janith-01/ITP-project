@@ -84,6 +84,7 @@ const EditOrder = () => {
   };
 
   return (
+    <div className="addreqBackground">
     <div className="addReqOrder">
       <Link to={"/reqorder"}>Back</Link>
       <h3>Edit Place Order Form</h3>
@@ -168,6 +169,8 @@ const EditOrder = () => {
           <button type="submit">Edit Place Order</button>
         </div>
       </form>
+    </div>
+
     </div>
   );
 };

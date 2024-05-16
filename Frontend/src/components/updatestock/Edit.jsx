@@ -96,6 +96,7 @@ const Edit = () => {
   };
 
   return (
+    <div className="addstockbackground">
     <div className={`addStock ${highlight ? "low-stock" : ""}`}>
       <Link to={"/getstock"}>Back</Link>
       <h3>Update Stock</h3>
@@ -195,6 +196,7 @@ const Edit = () => {
         </div>
       </form>
     </div>
+  </div>
   );
 };
 

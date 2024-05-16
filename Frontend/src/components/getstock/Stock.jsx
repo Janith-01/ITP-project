@@ -1,31 +1,33 @@
-//stock.jsx
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import "./stock.css";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
-import InventoryNav from '../InventoryNav/InventoryNav'
+import InventoryNav from '../InventoryNav/InventoryNav';
 
 const Stock = () => {
   const [stocks, setStocks] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [setNoResults] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+    fetchData(); // Fetch initial data
+  }, []);
+
+  const fetchData = async () => {
+    try {
       const response = await axios.get("http://localhost:8083/api/getall");
       setStocks(response.data);
-    };
-    fetchData();
-  }, []);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const ComponentsRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => ComponentsRef.current,
     documentTitle: "Stock Report",
-    //onAfterPrint:()=> console.log("Stock Report Successfully Download!"),
   });
 
   const handleSearch = async () => {
@@ -37,28 +39,19 @@ const Stock = () => {
         )
       );
       setStocks(filteredStocks);
-      setNoResults(filteredStocks.length === 0);
     } catch (error) {
       console.log(error);
     }
   };
 
-  /*const deleteStock = async (stockId) => {
-    try {
-      await axios.delete(`http://localhost:8000/api/delete/${stockId}`);
-      setStocks((prevStock) =>
-        prevStock.filter((stock) => stock._id !== stockId)
-      );
-      toast.success("Stock deleted successfully", { position: "top-right" });
-    } catch (error) {
-      console.log(error);
-    }
-  };*/
+  const resetData = async () => {
+    setSearchQuery(""); // Clear search query
+    fetchData(); // Fetch all data again
+  };
 
   const deleteStock = async (stockId, productName) => {
     const result = await Swal.fire({
       title: `Are you sure you want to delete ${productName}?`,
-
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#d33",
@@ -78,35 +71,39 @@ const Stock = () => {
         console.log(error);
         toast.error("Error deleting stock");
       }
-    } else {
-      console.log("deleted");
     }
   };
 
   return (
     <div className="stock-background">
+     
+
       <div className="searchDetails no-print">
-       <InventoryNav/>
+        <InventoryNav />
 
         <Link to={"/add"} className="addStockButton no-print">
-          Add Stock
+        <i class="fa-solid fa-cart-plus"></i>Add Stock 
         </Link>
         <input
           className="searchField no-print"
+          value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           type="text"
           name="search"
-          placeholder="Search Stock"
         />
 
         <button className="searchStockbutton no-print" onClick={handleSearch}>
-          Search
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button className="resetButton no-print" onClick={resetData}>
+          <i className="fa-solid fa-arrows-rotate"></i>
         </button>
       </div>
 
       <div ref={ComponentsRef} className="stockTable">
-        <div className="titleStock">Stock Details</div>
-
+      <div className="titleStock">Stock Details</div>
+      
         <table border={1} cellPadding={10} cellSpacing={0}>
           <thead>
             <tr>
@@ -134,7 +131,8 @@ const Stock = () => {
                 <td>{stock.unitPrice}</td>
                 <td>{stock.status}</td>
                 <td className="actionButton no-print">
-                  <button className="deleteStockButton"
+                  <button
+                    className="deleteStockButton"
                     onClick={() => deleteStock(stock._id, stock.productName)}
                   >
                     <i className="fa-solid fa-trash"></i>

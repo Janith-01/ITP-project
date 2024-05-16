@@ -4,7 +4,8 @@ import toast from "react-hot-toast";
 import "./sale.css";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { useReactToPrint } from "react-to-print";
-import InventoryNav from '../InventoryNav/InventoryNav'
+import InventoryNav from '../InventoryNav/InventoryNav';
+
 
 const Sale = () => {
   const [sales, setSales] = useState([]);

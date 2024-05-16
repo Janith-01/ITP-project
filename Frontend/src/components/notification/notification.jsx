@@ -25,7 +25,7 @@ const Notifications = () => {
         
         <div className="notifications-container">
           <InventoryNav/>
-             <Link to={"/getstock"} className='back-button'><i className="fa-solid fa-hand-point-left"></i></Link>
+             <Link to={"/getstock"} className='back-button'><i class="fa-solid fa-circle-left"></i></Link>
             <h1 className="notifications-header">Stock Alert!!!</h1>
             <ul className="notification-list">
                 {notifications.map(notification => (

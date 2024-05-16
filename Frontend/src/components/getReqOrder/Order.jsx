@@ -66,7 +66,7 @@ const Order = () => {
           <div className="ordertitle"> Request an Order </div>
           
           <Link to="/addorder" className="addButton-order no-print">
-            Add Request an Order
+            Add Request 
 
           </Link>
           <input
@@ -74,9 +74,9 @@ const Order = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             type="text"
             name="search"
-            placeholder="Search Request Order Details"
+            
           />
-          <button className="searchOrderButton no-print" onClick={handleSearch}>Search</button>
+          <button className="searchOrderButton no-print" onClick={handleSearch}><i className="fa-solid fa-magnifying-glass"></i></button>
 
           <table border={1} cellPadding={10} cellSpacing={0}>
             <thead>

@@ -85,13 +85,14 @@ const EditSale = () => {
   };
 
   return (
-    <div className="editSale">
+    <div className="addsalebackground">
+    <div className="addSale">
       <Link to="/sales">Back</Link>
       <h3>Update Sales Form</h3>
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <form className="placeOrderForm" onSubmit={submitForm}>
+        <form className="addSaleForm" onSubmit={submitForm}>
           {/* Product ID */}
           <div className="inputGroup">
             <label htmlFor="productId">Product ID</label>
@@ -187,6 +188,7 @@ const EditSale = () => {
           </div>
         </form>
       )}
+    </div>
     </div>
   );
 };

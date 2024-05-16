@@ -1,10 +1,25 @@
+.addreqBackground{
+    
+  position: relative; 
+  background-image: url("order4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+
+}
+
+
+
 .addReqOrder {
     background-color: #f9f9f9; /* Background color for the form */
-    padding: 20px; /* Padding around the form */
+    padding: 40px; /* Padding around the form */
     border-radius: 5px; /* Rounded corners for the form */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
     max-width: 500px; /* Maximum width of the form */
-    margin: 20px auto; /* Center the form horizontally */
+    margin: 3px auto; /* Center the form horizontally */
+   
+   
+
     
   }
   

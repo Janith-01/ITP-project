@@ -17,7 +17,8 @@
   .sale-table {
     margin: 10px auto;
     padding: 10px;
-    width: 80%; /* Decreased the width from 80% to 60% */
+    width: 70%; /* Decreased the width from 80% to 60% */
+
     
   }
   
@@ -26,6 +27,7 @@
     border-collapse: collapse;
     text-align: center;
     margin-top: 50px;
+    margin-left: 50px;
   }
   
   .addSaleButton {
@@ -37,13 +39,18 @@
     display: inline-block;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-left: 50px;
   }
   
   .searchSaleField {
+    margin-top: 20px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 10px;
+    margin-left: 20px;
+    width: 300px;
+    
   }
   
   .searchSalebutton {
@@ -120,6 +127,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin: 50px;
   }
   
   .generateSaleReport button:hover {
@@ -128,9 +136,10 @@
   
   .Saletitle {
     font-family: "Roboto" sans-serif;
-    font-size: 30px;
-    color: rgb(19, 15, 238);
+    font-size: 40px;
+    color: white;
     text-align: center;
+    font-style: bold;
   }
   
   /* Media query for print-specific styles */

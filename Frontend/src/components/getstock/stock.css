@@ -1,4 +1,5 @@
 /* stock.css */
+
 .stock-background {
   position: relative;
   background-image: url("stock1.jpg");
@@ -11,65 +12,80 @@
   margin: 10px auto;
   padding: 5px;
   width: 60%;
-  font-size: 14px;
+  font-size: 16px;
+
 }
 
 .stockTable table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
-  margin-top: 20px;
+  
 }
 
-.titleStock{
-  font-family: "Roboto" sans-serif;
+.titleStock {
+  font-family:"Roboto" sans-serif;
   font-size: 40px;
-  color:black;
+  color: #670a53;
   text-align: center;
-  font-style:bold;
+  font-style: bold;
  
+
 }
 
 
 .addStockButton {
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-    margin-left: 200px;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  margin-left: 250px;
 }
-
 
 .searchField {
   font-family: "Roboto" sans-serif;
-  width: 200px;
+  width: 300px;
   padding: 8px;
   margin-left: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-size: medium;
 }
+
 
 .searchStockbutton {
   font-family: "Roboto" sans-serif;
   padding: 8px 20px;
-  background-color: rgba(102, 51, 153, 0.8);
+  background-color: #670a53;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-left: 10px;
- 
+  margin: 10px;
 }
 
-.searchStockbutton:hover {
-  background-color: rgba(107, 53, 168, 0.8);
+.resetButton{
+  font-family: "Roboto" sans-serif;
+  padding: 8px 20px;
+  background-color: #670a53;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px;
 }
 
-th, td {
+
+
+
+
+th,
+td {
   background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-family: "Roboto" sans-serif;
@@ -97,28 +113,25 @@ tr:nth-child(even) {
 .editStockButton {
   margin-right: 5px;
   padding: 5px;
-  /*border: none;
-  border-radius: 50%;*/
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .deleteStockButton {
-  background-color: red; /* Red */
+  background-color: red;
   color: white;
 }
 
 .editStockButton {
-  background-color: blue; /* Blue */
+  background-color: blue;
   color: white;
 }
 
 .deleteStockButton:hover,
 .editStockButton:hover {
-  background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+  background-color: rgba(255, 0, 0, 0.8);
 }
-
 
 .low-stock {
   background-color: lightcoral;
@@ -127,7 +140,7 @@ tr:nth-child(even) {
 /* Media query for print-specific styles */
 @media print {
   .no-print {
-    display: none !important; /* Hide unwanted components */
+    display: none !important;
   }
 
   .stockTable {
@@ -139,29 +152,25 @@ tr:nth-child(even) {
     border-collapse: collapse;
   }
 
-  .stockTable th, .stockTable td {
+  .stockTable th,
+  .stockTable td {
     padding: 10px;
-    border: 1px solid #000; /* Ensure visible borders */
+    border: 1px solid #000;
   }
 
   .generateReport {
-    display: none; /* Hide the "Generate Report" button */
-    
+    display: none;
   }
 }
-
 
 .generateStockReport button {
   background-color: #06a02a;
   border: none;
   color: white;
   padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: 300px;
+  border-radius: 20px;
+  margin-left: 700px;
   cursor: pointer;
 }
 
-.generateStockReport  button:hover {
-  background-color: #0b7dda;
-}
 

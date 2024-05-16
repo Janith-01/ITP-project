@@ -13,7 +13,7 @@ function Nav() {
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : "open"}`}>
       <div className="logo_details">
-        <div className="logo_name">Tusker Ceylon Pvt Ltd</div>
+        <div className="logo_name"></div>
         <i className="bx bx-menu" id="btn" onClick={toggleSidebar}></i>
       </div>
       <ul className="nav-list">
@@ -68,7 +68,7 @@ function Nav() {
 
 
           <div className="profile_content">
-            <div className="name">Anna Jhon</div>
+            <div className="name">Rizmia Mansoor</div>
             <div className="designation">Inventory Manager</div>
           </div>
         </div>

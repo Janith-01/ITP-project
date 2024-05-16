@@ -12,11 +12,12 @@
 }
 
 .notifications-header {
-  font-size: 24px; /* Smaller font */
+  font-size: 40px; /* Smaller font */
   margin-bottom: 8px; /* Reduced margin */
   text-align: center;
   font-family: "Roboto" sans-serif;
-  color: black;
+  color:white;
+  font-style: bold;
   margin-top: 20px;
 }
 
@@ -41,8 +42,10 @@
 }
 
 .back-button {
-  padding-left: 100px;
-  font-size: 22px; /* Reduced font size for the back button */
-  color: rebeccapurple;
-  margin-bottom: 30px;
+  
+  font-size: 30px; /* Reduced font size for the back button */
+  color: #670a53;
+  margin-inline-end: auto;
+  
+  
 }

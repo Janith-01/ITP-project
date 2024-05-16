@@ -5,19 +5,21 @@
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  
 }
 
 .reqOrderTable {
   margin: 20px auto;
   padding: 20px;
   width: 60%;
+  margin: 3px auto;
 }
 
 
 .searchOrderButton {
   font-family: "Roboto" sans-serif;
   padding: 8px 20px;
-  background-color: rgba(102, 51, 153, 0.8);
+  background-color: #670a53;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -25,16 +27,16 @@
   transition: background-color 0.3s ease;margin: 10px;
 }
 
-.searchOrderButton:hover {
+/*.searchOrderButton:hover {
   background-color: rgba(107, 53, 168, 0.8);
-}
+}*/
 
 .addButton-order {
   font-family: "Roboto" sans-serif;
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px 20px;
-  background-color: rgba(102, 51, 153, 0.8);
+  background-color: #670a53;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -42,9 +44,9 @@
   
 }
 
-.addButton-order:hover {
+/*.addButton-order:hover {
   background-color: rgba(107, 53, 168, 0.8);
-}
+}*/
 
 .input[type="text"], .searchbox {
   font-family: "Roboto" sans-serif;
@@ -71,7 +73,7 @@
 
 .searchbox{
   font-family: "Roboto" sans-serif;
-  width: 200px;
+  width: 300px;
   padding: 8px;
   margin-left: 20px;
   border: 1px solid #ccc;
@@ -143,15 +145,16 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
+  margin-left: 700px;
 }
 
-.generateOrderReport  button:hover {
-  background-color: #0b7dda;
-}
+
 
 .ordertitle {
   font-family: "Roboto" sans-serif;
-  font-size: 30px;
-  color: rgb(19, 15, 238);
+  font-size: 40px;
+  color: white;
   text-align: center;
+  font-style: bold;
 }

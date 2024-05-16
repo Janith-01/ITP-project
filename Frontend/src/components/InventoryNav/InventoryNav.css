@@ -3,8 +3,9 @@
 
 /* Define CSS variables for colors */
 :root {
-  --color-default:#A020F0 ;
-  --color-second:#A020F0;
+  /*--color-default:#A020F0 ;*/
+  --color-default:#670a53;
+  --color-second:#670a53;
   --color-white: white;
   --color-body: #e4e9f7;
   --color-light: #e0e0e0;
@@ -49,6 +50,7 @@ body {
   position: relative;
 }
 
+
 .sidebar .logo_details .icon,
 .sidebar .logo_details .logo_name {
   opacity: 0; /* Hidden when collapsed */
@@ -61,6 +63,7 @@ body {
 .sidebar.open .logo_details .icon,
 .sidebar.open .logo_details .logo_name {
   opacity: 1; /* Visible when expanded */
+
 }
 
 /* Toggle button */
@@ -73,11 +76,13 @@ body {
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
+  
 }
 
 .sidebar.open .logo_details #btn {
   text-align: right;
   color: white;
+  
 }
 
 /* Sidebar icon styles */

@@ -1,151 +1,103 @@
-/*.home-background{
-  position: relative; 
-  background-image: url("garage2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+ .home-background {
+    background-image: url("garage2.jpg");
+    height: 100vh;
 }
 
-.title {
-    font-family:"Roboto" sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-    color:white;
-    text-align: center;
-    margin-top: 20px;
-  }*/
-
-
-
-  /*.home-background {
-    background-color: #f2f2f2;
-    height:100vh;
-  }
-
-  .dashboard-title {
+.dashboard-title {
     font-size: 26px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-left: 500px;
-    color: red;
-   
-  }
-  
-  .product-dashboard-container {
-    margin: 50px auto;
-    margin-left: 300px;
-    width: 100%;
-    max-width: 500px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+    margin-left: 600px;
+    color: rgb(244, 241, 241);
+}
 
-  
-  .total-products {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .total-products-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .total-products-count {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-
-
-  .value-dashboard-container {
-    margin: 50px auto;
-    margin-left: 300px;
-    width: 100%;
-    max-width: 500px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-
-  .total-value {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .total-value-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .total-value-count {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-  }*/
- 
-  .home-background {
-    background-color: #f2f2f2;
-    height: 100vh;
-  }
-  
-  .dashboard-title {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-left: 500px;
-    color: red;
-  }
-  
-  .product-value-container {
+.product-value-container {
     display: flex;
     justify-content: space-between;
     margin-left: 300px;
     width: calc(100% - 320px);
     max-width: 700px;
-    
-  }
-  
-  .total-products,
-  .total-value {
+}
+
+.total-products,
+.total-value {
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
     flex: 1;
-    
-    
-   
-  }
-  
-  .total-value {
+}
+
+.total-value {
     margin-left: 20px;
-  }
-  
-  .total-products-title,
-  .total-value-title {
+}
+
+.total-products-title,
+.total-value-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
-  .total-products-count,
-  .total-value-count {
+}
+
+.total-products-count,
+.total-value-count {
     font-size: 36px;
     font-weight: bold;
     color: #333;
-  }
-  
+}
+
+.total-sales {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.total-sales-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.total-sales-count {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-table-container {
+    margin-left: 300px;
+    width: calc(100% - 320px);
+    max-width: 700px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th,
+.product-table td {
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-family: "Roboto" sans-serif;
+    padding: 10px;
+}
+
+.product-table th {
+    background-color: white;
+    color: black;
+    border-style: double;
+    border-top: #0b7dda;
+    border-bottom: #0b7dda;
+}
+
+.product-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
   

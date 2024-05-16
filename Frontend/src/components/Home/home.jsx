@@ -1,101 +1,46 @@
-/*import React from 'react';
-import Nav from '../Nav/Nav';
-import './home.css'; 
-
-const Home = () => {
-  return (
-    <div className='home-background'>
-      <Nav />
-     
-      <div className='title'>
-        Inventory Management Dashboard
-      </div>
-    </div>
-  );
-}
-
-export default Home;*/
-
-
-/*import React, { useState, useEffect } from 'react';
-import Nav from '../Nav/Nav';
-import axios from 'axios';
-import './home.css'; 
-
-const Home = () => {
-  const [totalProducts, setTotalProducts] = useState(0);
-
-  useEffect(() => {
-    const fetchStockData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/getall');
-        const stockData = response.data;
-        // Calculate total quantity
-        const total = stockData.reduce((acc, curr) => acc + curr.quantity, 0);
-        setTotalProducts(total);
-      } catch (error) {
-        console.error('Error fetching stock data:', error);
-      }
-    };
-
-    fetchStockData();
-  }, []);
-
-  return (
-    <div className='home-background'>
-      <Nav />
-     
-      <div className='dashboard-container'>
-        <div className='dashboard-title'>
-          Inventory Management Dashboard
-        </div>
-        <div className='total-products'>
-          <div className='total-products-title'>Total Products in Stock: <i class="fa-solid fa-bag-shopping"></i></div>
-          <div className='total-products-count'>{totalProducts}</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default Home;*/
-
 import React, { useState, useEffect } from 'react';
-import InventoryNav from '../InventoryNav/InventoryNav'
+import InventoryNav from '../InventoryNav/InventoryNav';
 import axios from 'axios';
 import './home.css'; 
 
 const Home = () => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalValue, setTotalValue] = useState(0);
+  const [totalSales, setTotalSales] = useState(0); // New state for total sales
+  const [outOfStockProducts, setOutOfStockProducts] = useState([]);
 
   useEffect(() => {
-    const fetchStockData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8083/api/getall');
-        const stockData = response.data;
-
-        // Calculate total quantity
+        // Fetch total products and total value
+        const stockResponse = await axios.get('http://localhost:8083/api/getall');
+        const stockData = stockResponse.data;
         const totalQuantity = stockData.reduce((acc, curr) => acc + curr.quantity, 0);
-        setTotalProducts(totalQuantity);
-
-        // Calculate total value
         const totalVal = stockData.reduce((acc, curr) => acc + (curr.quantity * curr.unitPrice), 0);
+        setTotalProducts(totalQuantity);
         setTotalValue(totalVal);
+
+        // Fetch total sales
+        const salesResponse = await axios.get('http://localhost:8083/Sale/getAll');
+        const totalSalesAmount = salesResponse.data.reduce((acc, sale) => acc + sale.totalSales, 0);
+        setTotalSales(totalSalesAmount);
+
+        // Fetch out of stock products
+        const outOfStockResponse = await axios.get('http://localhost:8083/api/getall');
+        const outOfStock = outOfStockResponse.data.filter(product => product.status === 'out of stock');
+        setOutOfStockProducts(outOfStock);
       } catch (error) {
-        console.error('Error fetching stock data:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchStockData();
+    fetchData();
   }, []);
 
   return (
     <div className='home-background'>
-      <InventoryNav/>
-      <div className='dashboard-title'>
-        Inventory Management Dashboard
-      </div>
+      <InventoryNav />
+      <div className='dashboard-title'>Dashboard Overview</div>
       <div className='product-value-container'>
         <div className='total-products'>
           <div className='total-products-title'><i className="fa-solid fa-bag-shopping"></i> Total Products in Stock:</div>
@@ -106,9 +51,41 @@ const Home = () => {
           <div className='total-value-title'><i className="fa-solid fa-sack-dollar"></i> Total Value of Products (LKR):</div>
           <div className='total-value-count'>{totalValue}</div>
         </div>
+
+        <div className='total-sales'>
+          <div className='total-sales-title'><i className="fa-solid fa-coins"></i> Total Sales (LKR):</div>
+          <div className='total-sales-count'>{totalSales}</div>
+        </div>
+      </div>
+
+      <div className='dashboard-title'>Out of Stock Products</div>
+      <div className='product-table-container'>
+        <table className='product-table'>
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {outOfStockProducts.map(product => (
+              <tr key={product._id}>
+                <td>{product.productId}</td>
+                <td>{product.productName}</td>
+                <td>{product.category}</td>
+                <td>{product.quantity}</td>
+                <td>{product.unitPrice}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 }
 
 export default Home;
+
